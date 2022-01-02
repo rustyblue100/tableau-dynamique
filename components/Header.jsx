@@ -132,7 +132,7 @@ const Header = ({ message, auth }) => {
                   <ListItemText primary="urgent" />
                 </ListItemButton>
                 <ListItemButton sx={{ p: 0 }} onClick={handleLogOut}>
-                  <LogoutIcon sx={{ mr: 1, p: 0 }} color="error" />
+                  <LogoutIcon sx={{ mr: 1, p: 0 }} color="secondary" />
                   {/*           <ListItemText
                     primary="logout"
                     onClick={handleLogOut}
