@@ -103,7 +103,11 @@ const Films = () => {
     if (isOnline) {
       return fetchAirtableData();
     }
-  }, [isVisible, pusherConnextionStatus, isOnline]);
+
+    if (reload) {
+      return fetchAirtableData();
+    }
+  }, [isVisible, pusherConnextionStatus, isOnline, reload]);
 
   //Fetch triggered by Pusher.js
   useEffect(() => {
