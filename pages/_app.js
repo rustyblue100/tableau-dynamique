@@ -19,9 +19,10 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: "Helvetica Neue",
     h1: {
       fontSize: 48,
-      fontWeight: 700,
+      fontWeight: 500,
       "@media (min-width:3200px)": { fontSize: 96 },
     },
     body1: {
