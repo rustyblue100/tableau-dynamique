@@ -118,7 +118,7 @@ const Header = ({ message, auth }) => {
         <Grid item md={3} xl={3}>
           <Item elevation={0}>
             <Box>
-              <List dense={false} sx={{ float: "right", pt: 0, mr: 5 }}>
+              <List dense={false} sx={{ float: "right" }}>
                 <ListItemButton sx={{ p: 0 }}>
                   <SquareIcon sx={{ color: "#f1e577", mr: 1, p: 0 }} />
                   <ListItemText primary="à confirmé" />
@@ -131,9 +131,13 @@ const Header = ({ message, auth }) => {
                   <SquareIcon sx={{ color: "#dda8a8", mr: 1, p: 0 }} />
                   <ListItemText primary="urgent" />
                 </ListItemButton>
-                <ListItemButton sx={{ p: 0 }}>
-                  <LogoutIcon sx={{ mr: 1, p: 0 }} color="secondary" />
-                  <ListItemText primary="déconnexion" onClick={handleLogOut} />
+                <ListItemButton sx={{ p: 0 }} onClick={handleLogOut}>
+                  <LogoutIcon sx={{ mr: 1, p: 0 }} color="error" />
+                  {/*           <ListItemText
+                    primary="logout"
+                    onClick={handleLogOut}
+                    sx={{ fontSize: 1 }}
+                  /> */}
                 </ListItemButton>
               </List>
             </Box>
