@@ -19,7 +19,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Helvetica Neue",
+    fontFamily: "Helvetica Neue, Inter",
     h1: {
       fontSize: 48,
       fontWeight: 500,

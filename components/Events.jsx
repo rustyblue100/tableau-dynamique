@@ -122,7 +122,7 @@ export default function Events({
           eventsDemain && eventsDemain.length < 5 /* || width < 3200 */ ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 3 }}
+                sx={{ minWidth: 700, mt: 4 }}
                 aria-label="customized table"
               >
                 <TableHeadRow
@@ -162,7 +162,7 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={2}>
         <TableContainer>
-          <Table sx={{ minWidth: 700, mt: 3 }} aria-label="customized table">
+          <Table sx={{ minWidth: 700, mt: 4 }} aria-label="customized table">
             <TableHeadRow tabIndexValue={value} width={width} type="pf" />
             <TableBody>
               {afaire &&
