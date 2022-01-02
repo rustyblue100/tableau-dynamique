@@ -1,0 +1,102 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bellAlert {
+  transform: rotate(10deg);
+  margin-left: 10px;
+}
+
+@media (max-width: 568px) {
+  .bellAlert {
+    margin-left: 0;
+    margin-top: 1.7rem;
+  }
+}
+
+.alerted-green {
+  animation: flash-green 2s linear infinite forwards;
+}
+
+.alerted-red {
+  animation: flash-red 2s linear infinite forwards;
+}
+
+.alerted-yellow {
+  animation: flash-yellow 2s linear infinite forwards;
+}
+
+@keyframes flash-green {
+  from {
+    /*    background-color: #dda8a8; */
+    background-color: #b3dda8;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash-red {
+  from {
+    background-color: #dda8a8;
+    /*     background-color: rgb(0, 243, 0); */
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash-yellow {
+  from {
+    background-color: #f1e577;
+    /*     background-color: rgb(0, 243, 0); */
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.swiper {
+  width: 100% !important;
+}
+.swiper-slide {
+  width: 100%;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  padding: 0.3rem 0 !important;
+  top: -2px;
+}
+
+@media (min-width: 3200px) {
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
