@@ -33,8 +33,9 @@ const DetailslNote = styled("a")(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  backgroundColor: theme.palette.action.hover,
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.common.white,
   },
   // hide last border
   "&:last-child td, &:last-child th": {
