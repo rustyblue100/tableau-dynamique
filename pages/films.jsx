@@ -66,7 +66,7 @@ const Films = () => {
         console.log("error: " + err);
       });
 
-    base("Tâches")
+    base("Tâches copy")
       .select({
         /* maxRecords: 10,  */
         view: "Tableau",

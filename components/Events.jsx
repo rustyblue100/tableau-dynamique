@@ -2,7 +2,6 @@ import {
   Box,
   CircularProgress,
   Grid,
-  Paper,
   Tab,
   Table,
   TableBody,
@@ -10,7 +9,6 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import Header from "../components/Header";
 import { useViewport } from "../utils/hooks";
@@ -63,10 +61,23 @@ export default function Events({
 
   const slideDataValues = width > 3200 ? [0, 5, 5, 10] : [0, 3, 3, 10]; // Number of row per slide
 
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
+
+  const group =
+    afaire &&
+    afaire.reduce((r, a) => {
+      r[a.fields.Date] = [...(r[a.fields.Date] || []), a];
+      return r;
+    }, {});
+
   return (
     <Box sx={{ width: "100%" }}>
       <Header message={message} />
-
       <Tabs
         variant="fullWidth"
         orientation="horizontal"
@@ -161,41 +172,7 @@ export default function Events({
         )}{" "}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <TableContainer>
-          <Table sx={{ minWidth: 700, mt: 4 }} aria-label="customized table">
-            <TableHeadRow tabIndexValue={value} width={width} type="pf" />
-            <TableBody>
-              {afaire &&
-                afaire
-                  .filter((f) => f.fields.Type === "Plats Frais")
-                  .map((f, i) => {
-                    return (
-                      f.fields.Publier && (
-                        <Taches key={f.id} afaire={f} index={i} />
-                      )
-                    );
-                  })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-
-        <TableContainer>
-          <Table aria-label="customized table">
-            <TableHeadRow tabIndexValue={value} width={width} type="pc" />
-            <TableBody>
-              {afaire &&
-                afaire
-                  .filter((f) => f.fields.Type === "Plats Congelés")
-                  .map((f, i) => {
-                    return (
-                      f.fields.Publier && (
-                        <Taches key={f.id} afaire={f} index={i} />
-                      )
-                    );
-                  })}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <Taches afaire={afaire && Object.values(group)} />
       </TabPanel>
     </Box>
   );
