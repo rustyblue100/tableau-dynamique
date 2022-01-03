@@ -87,11 +87,27 @@ const Event = (props) => {
 
   Alerts();
 
+  console.log(Status);
+
   return (
     <>
       <StyledTableRow
         style={{ backgroundColor: Status === "En attente" && "#fff70038" }}
       >
+        <StyledTableCell
+          sx={{
+            width: 10,
+            border: 0,
+            backgroundColor:
+              Status === "Non-confirmé"
+                ? "#f1e577"
+                : Status === "Urgent"
+                ? "#dda8a8"
+                : "#b3dda8",
+          }}
+          data-priority={Status}
+          align="left"
+        ></StyledTableCell>
         <StyledTableCell
           data-priority={Status}
           className={`cell-event-${index}`}
@@ -202,7 +218,7 @@ const Event = (props) => {
           <StyledTableCell
             data-priority={Status}
             align="left"
-            colSpan={9}
+            colSpan={10}
             className={`marquee-wrap-${index}`}
             sx={{ py: 1 }}
           >

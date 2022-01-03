@@ -45,6 +45,14 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
   return type === "event" ? (
     <TableHead type="event">
       <TableRow>
+        <StyledTableCell
+          sx={{
+            width: 15,
+          }}
+          tabindex={tabIndexValue}
+          type="event"
+          align="center"
+        ></StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event">
           Films
         </StyledTableCell>
