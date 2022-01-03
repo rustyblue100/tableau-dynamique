@@ -81,19 +81,16 @@ const Header = ({ message, auth }) => {
   return (
     <Box>
       {message && message[0].fields.Publier && (
-        <Marquee
-          gradient={false}
-          speed={50}
-          style={{
-            backgroundColor: "",
-            borderBottom: "1px solid lightgray",
-            padding: ".5rem 0",
-          }}
+        <Typography
+          variant="marquee"
+          color="#ffffff"
+          backgroundColor="#e00000"
+          textAlign="center"
+          display="flex"
+          justifyContent="center"
         >
-          <Typography variant="marquee" color="#db4f44">
-            {message[0].fields.Message}
-          </Typography>
-        </Marquee>
+          {message[0].fields.Message}
+        </Typography>
       )}
       <Grid container alignItems="center">
         <Grid container item md={3} xl={3}>
