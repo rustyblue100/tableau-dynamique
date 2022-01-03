@@ -2,6 +2,8 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import TacheCard from "./TacheCard";
+import moment from "moment";
+import "moment/locale/fr"; // without this line it didn't work
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,25 +14,38 @@ import "swiper/css/pagination";
 // import Swiper core and required modules
 
 const AFaire = ({ afaire }) => {
-  console.log(afaire);
+  const group = afaire.reduce((r, a) => {
+    r[a.fields.Date] = [...(r[a.fields.Date] || []), a];
+    return r;
+  }, {});
 
-  console.log(afaire && afaire.map((a) => <h1>1</h1>));
+  const afaireGroup = afaire && Object.values(group);
+
+  var menu =
+    afaireGroup &&
+    afaireGroup.map((t, i) => {
+      const formatDate = moment(t[0].fields.Date).format("dddd D MMM");
+
+      return formatDate;
+    });
 
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
+      return '<li class="' + className + '">' + menu[index] + "</li>";
     },
   };
 
   return (
     <Swiper pagination={pagination}>
-      {afaire &&
-        afaire.map((t) => {
+      {afaireGroup &&
+        afaireGroup.map((t, i) => {
           return (
-            <SwiperSlide>
-              {t.map((f) => (
-                <TacheCard info={f.fields} />
+            <SwiperSlide key={i}>
+              <h1>{moment(t[0].fields.Date).format("dddd D MMM")}</h1>
+
+              {t.map((f, i) => (
+                <TacheCard key={i} info={f.fields} />
               ))}
             </SwiperSlide>
           );

@@ -94,7 +94,7 @@ export default function Events({
           events && events.length < 5 /* || width < 3600 */ ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 3 }}
+                sx={{ minWidth: 700, mt: 5 }}
                 aria-label="customized table"
               >
                 <TableHeadRow tabIndexValue={value} type="event" />
@@ -172,7 +172,9 @@ export default function Events({
         )}{" "}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Taches afaire={afaire && Object.values(group)} />
+        <Box pb={4}>
+          <Taches afaire={afaire} />
+        </Box>
       </TabPanel>
     </Box>
   );
