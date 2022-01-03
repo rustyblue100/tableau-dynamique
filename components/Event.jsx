@@ -213,36 +213,37 @@ const Event = (props) => {
           )}
         </StyledTableCell>
       </StyledTableRow>
-      {Allergies ? (
-        <StyledTableRow>
-          <StyledTableCell
-            data-priority={Status}
-            align="left"
-            colSpan={10}
-            className={`marquee-wrap-${index}`}
-            sx={{ py: 1 }}
+      {/*  {Allergies ? ( */}
+      <StyledTableRow>
+        <StyledTableCell
+          data-priority={Status}
+          align="left"
+          colSpan={10}
+          className={`marquee-wrap-${index}`}
+          sx={{ py: 1 }}
+        >
+          <Marquee
+            speed={80}
+            gradient={false}
+            pauseOnClick={true}
+            delay={delayMarquee(index)}
+            className={`cell-marquee-${index}`}
           >
-            <Marquee
-              speed={80}
-              gradient={false}
-              pauseOnClick={true}
-              delay={delayMarquee(index)}
-              className={`cell-marquee-${index}`}
+            <Typography
+              data-priority={Status}
+              variant="body1"
+              paragraph={false}
+              style={{ lineHeight: 1.5 }}
             >
-              <Typography
-                data-priority={Status}
-                variant="body1"
-                paragraph={false}
-                style={{ lineHeight: 1.5 }}
-              >
-                {`↑↑ Allergies: ${Allergies} ↑↑`}
-              </Typography>
-            </Marquee>
-          </StyledTableCell>
-        </StyledTableRow>
-      ) : (
+              {Allergies ? `↑↑ Allergies: ${Allergies} ↑↑` : "\u00A0"}
+            </Typography>
+          </Marquee>
+        </StyledTableCell>
+      </StyledTableRow>
+
+      {/* : (
         ""
-      )}
+      )} */}
     </>
   );
 };
