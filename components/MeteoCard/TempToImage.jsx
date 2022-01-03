@@ -8,7 +8,7 @@ const WeatherImg = ({ weather }) => {
 
   const desc = weather[0].description;
 
-  const iconSize = matches ? 64 : 100;
+  const iconSize = matches ? 64 : 92;
   switch (true) {
     case desc === "ciel dégagé":
       return (
