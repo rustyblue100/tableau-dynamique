@@ -87,8 +87,6 @@ const Event = (props) => {
 
   Alerts();
 
-  console.log(Status);
-
   return (
     <>
       <StyledTableRow

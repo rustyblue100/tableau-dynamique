@@ -11,21 +11,19 @@ function MeteoCard(props) {
   newDate.setTime(weekday);
 
   return (
-    <Box ml={1} my={3}>
-      <Typography variant="body1" sx={{ textAlign: "left" }}>
-        <div>{props.index === 0 ? "Aujourd'hui" : "Demain"}</div>
-        <Grid container alignItems="center">
-          <Grid item mr={3}>
-            <div>{Math.round(temp.day)} °C</div>
-          </Grid>
-          <Grid item>
-            <WeatherImg weather={weather} />
-          </Grid>
+    <Box ml={1} my={3} typography="body1" sx={{ textAlign: "left" }}>
+      <span>{props.index === 0 ? "Aujourd'hui" : "Demain"}</span>
+      <Grid container alignItems="center">
+        <Grid item mr={3}>
+          <span>{Math.round(temp.day)} °C</span>
         </Grid>
-        <Grid container>
-          <Grid item>{weather[0].description}</Grid>
+        <Grid item>
+          <WeatherImg weather={weather} />
         </Grid>
-      </Typography>
+      </Grid>
+      <Grid container>
+        <Grid item>{weather[0].description}</Grid>
+      </Grid>
     </Box>
   );
 }

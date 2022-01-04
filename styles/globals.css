@@ -99,7 +99,8 @@ a {
 #simple-tabpanel-2 .swiper-pagination {
   position: relative !important;
   padding: 0.3rem 0 !important;
-  top: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 3200px) {
@@ -129,9 +130,9 @@ a {
   height: unset !important;
   border-radius: 0;
   padding: 8px;
-  background-color: #db4f44 !important;
-  color: #ffffff;
-  opacity: 0.6;
+  background-color: #0288d1 !important;
+  color: #000;
+  opacity: 0.4;
 }
 
 #simple-tabpanel-2 .swiper-pagination-bullet-active {

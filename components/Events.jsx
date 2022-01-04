@@ -172,7 +172,7 @@ export default function Events({
         )}{" "}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Box pb={4}>
+        <Box mt={3} pb={4}>
           <Taches afaire={afaire} />
         </Box>
       </TabPanel>
