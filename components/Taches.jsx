@@ -82,7 +82,7 @@ const AFaire = ({ afaire }) => {
                 columnSpacing={4}
               >
                 <Grid item>
-                  <Card>
+                  <Card sx={{ minWidth: 700 }}>
                     <CardContent>
                       <CardHeader
                         title="Plats Frais"
@@ -123,7 +123,7 @@ const AFaire = ({ afaire }) => {
                 </Grid>
 
                 <Grid item>
-                  <Card>
+                  <Card sx={{ minWidth: 700 }}>
                     <CardContent>
                       <CardHeader
                         title="Plats Congelés"
