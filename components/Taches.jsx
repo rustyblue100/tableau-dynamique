@@ -44,9 +44,18 @@ const AFaire = ({ afaire }) => {
     },
   };
 
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      fontSize: 28,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 28,
+    },
+  }));
+
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
+      backgroundColor: theme.palette.common.white,
     },
     // hide last border
     "&:last-child td, &:last-child th": {
@@ -67,7 +76,7 @@ const AFaire = ({ afaire }) => {
                 columnSpacing={4}
               >
                 <Grid item>
-                  <Card sx={{ minWidth: 700 }}>
+                  <Card sx={{ minWidth: 1400 }}>
                     <CardContent>
                       <CardHeader
                         title="Plats Frais"
@@ -76,13 +85,19 @@ const AFaire = ({ afaire }) => {
                         )}
                       />
                       <TableContainer>
-                        <Table aria-label="simple table" size="medium">
+                        <Table aria-label="simple table">
                           <TableHead>
-                            <TableRow>
-                              <TableCell align="left">Items</TableCell>
-                              <TableCell align="right">Quantités</TableCell>
-                              <TableCell align="right">Notes</TableCell>
-                            </TableRow>
+                            <StyledTableRow>
+                              <StyledTableCell align="left">
+                                Items
+                              </StyledTableCell>
+                              <StyledTableCell align="right">
+                                Quantités
+                              </StyledTableCell>
+                              <StyledTableCell align="right">
+                                Notes
+                              </StyledTableCell>
+                            </StyledTableRow>
                           </TableHead>
                           <TableBody>
                             {t
@@ -102,7 +117,7 @@ const AFaire = ({ afaire }) => {
                 </Grid>
 
                 <Grid item>
-                  <Card sx={{ minWidth: 700 }}>
+                  <Card sx={{ minWidth: 1400 }}>
                     <CardContent>
                       <CardHeader
                         title="Plats Congelés"
@@ -111,13 +126,19 @@ const AFaire = ({ afaire }) => {
                         )}
                       />
                       <TableContainer>
-                        <Table aria-label="simple table" size="medium">
+                        <Table aria-label="simple table">
                           <TableHead>
-                            <TableRow>
-                              <TableCell align="left">Items</TableCell>
-                              <TableCell align="right">Quantités</TableCell>
-                              <TableCell align="right">Notes</TableCell>
-                            </TableRow>
+                            <StyledTableRow>
+                              <StyledTableCell align="left">
+                                Items
+                              </StyledTableCell>
+                              <StyledTableCell align="right">
+                                Quantités
+                              </StyledTableCell>
+                              <StyledTableCell align="right">
+                                Notes
+                              </StyledTableCell>
+                            </StyledTableRow>
                           </TableHead>
                           <TableBody>
                             {t
