@@ -46,10 +46,16 @@ const AFaire = ({ afaire }) => {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      fontSize: 28,
+      fontSize: 16,
+      [theme.breakpoints.up("xl")]: {
+        fontSize: 28,
+      },
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 28,
+      fontSize: 16,
+      [theme.breakpoints.up("xl")]: {
+        fontSize: 28,
+      },
     },
   }));
 
@@ -76,7 +82,7 @@ const AFaire = ({ afaire }) => {
                 columnSpacing={4}
               >
                 <Grid item>
-                  <Card sx={{ minWidth: 1400 }}>
+                  <Card>
                     <CardContent>
                       <CardHeader
                         title="Plats Frais"
@@ -117,7 +123,7 @@ const AFaire = ({ afaire }) => {
                 </Grid>
 
                 <Grid item>
-                  <Card sx={{ minWidth: 1400 }}>
+                  <Card>
                     <CardContent>
                       <CardHeader
                         title="Plats Congelés"
