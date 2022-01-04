@@ -75,6 +75,8 @@ export default function Events({
       return r;
     }, {});
 
+  console.log(events && events.filter((e) => e.fields.Liveboard));
+
   return (
     <Box sx={{ width: "100%" }}>
       <Header message={message} />
@@ -91,8 +93,8 @@ export default function Events({
       </Tabs>
       <TabPanel value={value} index={0}>
         {events ? (
-          events && events.length < 5 /* || width < 3600 */ ? (
-            <TableContainer>
+          events && events.filter((e) => e.fields.Liveboard).length < 5 ? (
+            /* || width < 3600 */ <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 5 }}
                 aria-label="customized table"
@@ -130,7 +132,8 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={1}>
         {eventsDemain ? (
-          eventsDemain && eventsDemain.length < 5 /* || width < 3200 */ ? (
+          eventsDemain.filter((e) => e.fields.Liveboard).length <
+          5 /* || width < 3200 */ ? (
             <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 4 }}
