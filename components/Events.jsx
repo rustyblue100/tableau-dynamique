@@ -96,7 +96,7 @@ export default function Events({
           events && events.filter((e) => e.fields.Liveboard).length < 5 ? (
             /* || width < 3600 */ <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 5 }}
+                sx={{ minWidth: 700, mt: 4 }}
                 aria-label="customized table"
               >
                 <TableHeadRow tabIndexValue={value} type="event" />
