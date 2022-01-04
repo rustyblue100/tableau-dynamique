@@ -88,6 +88,7 @@ const Header = ({ message, auth }) => {
           textAlign="center"
           display="flex"
           justifyContent="center"
+          py={1}
         >
           {message[0].fields.Message}
         </Typography>
