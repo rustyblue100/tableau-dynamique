@@ -218,23 +218,16 @@ const Event = (props) => {
           align="left"
           colSpan={10}
           className={`marquee-wrap-${index}`}
-          sx={{ py: 1 }}
+          sx={{ py: 1, typography: "body1" }}
         >
           <Marquee
             speed={80}
             gradient={false}
             pauseOnClick={true}
             delay={delayMarquee(index)}
-            className={`cell-marquee-${index}`}
+            data-priority={Status}
           >
-            <Typography
-              data-priority={Status}
-              variant="body1"
-              paragraph={false}
-              style={{ lineHeight: 1.5 }}
-            >
-              {Allergies ? `↑↑ Allergies: ${Allergies} ↑↑` : "\u00A0"}
-            </Typography>
+            {Allergies ? `↑↑ Allergies: ${Allergies} ↑↑` : "\u00A0"}
           </Marquee>
         </StyledTableCell>
       </StyledTableRow>

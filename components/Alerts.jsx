@@ -14,10 +14,18 @@ export default function Alerts() {
       mutations.map((record) => {
         const parentNodeValue = record.target.parentNode;
 
+        console.log(record);
+
         const cellPriority =
           parentNodeValue.attributes[1] &&
           parentNodeValue.attributes[1].nodeValue
             ? parentNodeValue.attributes[1].nodeValue
+            : "Confirmé";
+
+        const cellPriority2 =
+          parentNodeValue.parentNode.parentNode.attributes[1] &&
+          parentNodeValue.parentNode.parentNode.attributes[1].nodeValue
+            ? parentNodeValue.parentNode.parentNode.attributes[1].nodeValue
             : "Confirmé";
 
         const hasSome = (itemClass, value) => {
@@ -39,10 +47,12 @@ export default function Alerts() {
               );
 
             //Marquee alert
-            case parentNodeValue.localName === "p" &&
-              hasSome(parentNodeValue.parentNode.classList, "cell-marquee"):
+            case hasSome(
+              parentNodeValue.parentNode.parentNode.classList,
+              "marquee-wrap"
+            ):
               return document.querySelector(
-                `.${parentNodeValue.parentNode.parentNode.parentNode.parentNode.classList[4]}`
+                `.${parentNodeValue.parentNode.parentNode.classList[4]}`
               );
 
             //Regular cell alert
@@ -63,16 +73,19 @@ export default function Alerts() {
 
         cellStateChanged &&
           [cellStateChanged].map((cell) => {
-            if (cellPriority === "Confirmé") {
+            if (cellPriority === "Confirmé" || cellPriority2 === "Confirmé") {
               cell.classList.add("alerted-green");
             }
 
-            if (cellPriority === "Urgent") {
+            if (cellPriority === "Urgent" || cellPriority2 === "Urgent") {
               playBellAlert();
               return cell.classList.add("alerted-red");
             }
 
-            if (cellPriority === "Non-confirmé") {
+            if (
+              cellPriority === "Non-confirmé" ||
+              cellPriority2 === "Non-confirmé"
+            ) {
               cell.classList.add("alerted-yellow");
             }
           });
