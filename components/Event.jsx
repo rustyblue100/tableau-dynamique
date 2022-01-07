@@ -152,7 +152,7 @@ const Event = (props) => {
           data-priority={Status}
           sx={{ typography: "body1" }}
         >
-          {Serveurs && Serveurs + " "}
+          {Serveurs && Serveurs.toString().replace(/,[s]*/g, ", ")}
         </StyledTableCell>
 
         <StyledTableCell
