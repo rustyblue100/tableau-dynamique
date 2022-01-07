@@ -31,7 +31,22 @@ export const AuthProvider = ({ children }) => {
   }
 
   if (!currentUser) {
-    return <Login />;
+    if (loading) {
+      return (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 20,
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      );
+    } else {
+      return <Login />;
+    }
   } else {
     return (
       <AuthContext.Provider value={{ currentUser }}>
