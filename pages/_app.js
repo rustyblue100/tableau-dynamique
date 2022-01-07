@@ -17,15 +17,21 @@ const theme = createTheme({
     primary: {
       main: "#db4f44",
     },
+    common: {
+      black: "#222427",
+    },
   },
   typography: {
+    color: "#222427",
     fontFamily: "Helvetica Neue, Inter",
     h1: {
+      color: "#222427",
       fontSize: 48,
       fontWeight: 500,
       "@media (min-width:3200px)": { fontSize: 96 },
     },
     body1: {
+      color: "#222427",
       fontSize: 16,
       "@media (min-width:3200px)": { fontSize: 32 },
     },

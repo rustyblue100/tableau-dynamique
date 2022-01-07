@@ -11,8 +11,7 @@ import ReactMarkdown from "react-markdown";
 import Alerts from "./Alerts";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  /*   paddingTop: 10,
-  paddingBottom: 10, */
+  color: "#222427",
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
