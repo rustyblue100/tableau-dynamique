@@ -75,7 +75,7 @@ export default function Events({
       return r;
     }, {});
 
-  console.log(events && events.filter((e) => e.fields.Liveboard));
+  console.log(events && events.filter((e) => e.fields.Tableau));
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -93,7 +93,7 @@ export default function Events({
       </Tabs>
       <TabPanel value={value} index={0}>
         {events ? (
-          events && events.filter((e) => e.fields.Liveboard).length < 5 ? (
+          events && events.filter((e) => e.fields.Tableau).length < 5 ? (
             /* || width < 3600 */ <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 4 }}
@@ -104,7 +104,7 @@ export default function Events({
                   {events &&
                     events.map((f, i) => {
                       return (
-                        f.fields.Liveboard &&
+                        f.fields.Tableau &&
                         f.fields.Status && (
                           <Event key={f.id} event={f} index={i} />
                         )
@@ -132,7 +132,7 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={1}>
         {eventsDemain ? (
-          eventsDemain.filter((e) => e.fields.Liveboard).length <
+          eventsDemain.filter((e) => e.fields.Tableau).length <
           5 /* || width < 3200 */ ? (
             <TableContainer>
               <Table
@@ -148,7 +148,7 @@ export default function Events({
                   {eventsDemain &&
                     eventsDemain.map((f, i) => {
                       return (
-                        f.fields.Liveboard &&
+                        f.fields.Tableau &&
                         f.fields.Status && (
                           <Event key={f.id} event={f} index={i} />
                         )

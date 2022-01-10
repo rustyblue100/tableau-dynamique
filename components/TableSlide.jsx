@@ -72,7 +72,7 @@ const TableSlide = ({ slideData, events, eventsDemain, tabIndexValue }) => {
                   evensData &&
                     evensData.slice(slideData[0], slideData[1]).map((f, i) => {
                       return (
-                        f.fields.Liveboard &&
+                        f.fields.Tableau &&
                         f.fields.Status && (
                           <Event key={f.id} event={f} index={i} />
                         )
@@ -107,7 +107,7 @@ const TableSlide = ({ slideData, events, eventsDemain, tabIndexValue }) => {
                   evensData &&
                     evensData.slice(slideData[2], slideData[3]).map((f, i) => {
                       return (
-                        f.fields.Liveboard &&
+                        f.fields.Tableau &&
                         f.fields.Status && (
                           <Event key={f.id} event={f} index={i + 5} /> // index value for secongd page
                         )
