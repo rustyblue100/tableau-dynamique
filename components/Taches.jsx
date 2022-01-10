@@ -79,10 +79,15 @@ const AFaire = ({ afaire }) => {
                 container
                 justifyContent="center"
                 maxWidth="100%"
-                columnSpacing={4}
+                columnSpacing={{ xs: 1, xl: 4 }}
               >
                 <Grid item>
-                  <Card sx={{ minWidth: 700 }}>
+                  <Card
+                    sx={{
+                      minWidth: { sm: 500, xl: 1200 },
+                      maxWidth: { xs: 500, lg: 800, xl: 3000 },
+                    }}
+                  >
                     <CardContent>
                       <CardHeader
                         title="Plats Frais"
@@ -123,7 +128,12 @@ const AFaire = ({ afaire }) => {
                 </Grid>
 
                 <Grid item>
-                  <Card sx={{ minWidth: 700 }}>
+                  <Card
+                    sx={{
+                      minWidth: { sm: 500, xl: 1200 },
+                      maxWidth: { xs: 500, lg: 800, xl: 3000 },
+                    }}
+                  >
                     <CardContent>
                       <CardHeader
                         title="Plats Congelés"

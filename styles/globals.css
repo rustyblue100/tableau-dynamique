@@ -7,6 +7,12 @@ body {
     Droid Sans, Helvetica Neue, sans-serif;
 }
 
+@media (min-width: 3100px) {
+  html {
+    overflow: hidden;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
