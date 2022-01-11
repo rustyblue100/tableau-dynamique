@@ -44,7 +44,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const Event = (props) => {
   const {
-    Name,
+    Nom,
     Repas,
     Départ,
     Ready,
@@ -110,7 +110,7 @@ const Event = (props) => {
           className={`cell-event-${index}`}
           align="left"
         >
-          {Name}
+          {Nom}
 
           <Typography
             data-priority={Status}
