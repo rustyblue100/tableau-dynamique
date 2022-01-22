@@ -14,7 +14,7 @@ export default function Alerts() {
       mutations.map((record) => {
         const parentNodeValue = record.target.parentNode;
 
-        console.log(record);
+        /*         console.log(record); */
 
         const cellPriority =
           parentNodeValue.attributes[1] &&

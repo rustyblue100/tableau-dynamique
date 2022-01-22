@@ -16,6 +16,7 @@ import Event from "./Event";
 import TableHeadRow from "./TableHeadRow";
 import TableSlide from "./TableSlide";
 import Taches from "./Taches";
+import moment from "moment";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,7 +76,16 @@ export default function Events({
       return r;
     }, {});
 
-  console.log(events && events.filter((e) => e.fields.Tableau));
+  console.log(
+    events /*  &&
+      events.filter(
+        (e) =>
+          e.fields.Status === "Urgent" ||
+          e.fields.Status === "Non-confirmé" ||
+          e.fields.Status === "Confirmé"
+      ) */
+  );
+  const formatTime = "dddd D MMM";
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -87,14 +97,17 @@ export default function Events({
         onChange={handleChange}
         aria-label="basic tabs example"
       >
-        <Tab label="Aujourd'hui" {...a11yProps(0)} />
-        <Tab label="Demain" {...a11yProps(1)} />
+        <Tab label={moment().format(formatTime)} {...a11yProps(0)} />
+        <Tab
+          label={moment().add(1, "days").format(formatTime)}
+          {...a11yProps(1)}
+        />
         <Tab label="À faire" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         {events ? (
-          events && events.filter((e) => e.fields.Tableau).length < 5 ? (
-            /* || width < 3600 */ <TableContainer>
+          events.length < 5 ? (
+            <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 4 }}
                 aria-label="customized table"
@@ -103,12 +116,7 @@ export default function Events({
                 <TableBody>
                   {events &&
                     events.map((f, i) => {
-                      return (
-                        f.fields.Tableau &&
-                        f.fields.Status && (
-                          <Event key={f.id} event={f} index={i} />
-                        )
-                      );
+                      return <Event key={f.id} event={f} index={i} />;
                     })}
                 </TableBody>
               </Table>
@@ -132,8 +140,7 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={1}>
         {eventsDemain ? (
-          eventsDemain.filter((e) => e.fields.Tableau).length <
-          5 /* || width < 3200 */ ? (
+          eventsDemain.length < 5 ? (
             <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 4 }}
@@ -147,12 +154,7 @@ export default function Events({
                 <TableBody>
                   {eventsDemain &&
                     eventsDemain.map((f, i) => {
-                      return (
-                        f.fields.Tableau &&
-                        f.fields.Status && (
-                          <Event key={f.id} event={f} index={i} />
-                        )
-                      );
+                      return <Event key={f.id} event={f} index={i} />;
                     })}
                 </TableBody>
               </Table>

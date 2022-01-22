@@ -45,7 +45,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const Event = (props) => {
   const {
     Nom,
-    Repas,
+    Date_et_Heure,
     Départ,
     Ready,
     Notes,
@@ -53,6 +53,7 @@ const Event = (props) => {
     Pains,
     Vans,
     Serveurs,
+    Arrivé_service,
     Allergies,
     prenom_regisseurs,
     nom_regisseurs,
@@ -152,6 +153,8 @@ const Event = (props) => {
           sx={{ typography: "body1" }}
         >
           {Serveurs && Serveurs.toString().replace(/,[s]*/g, ", ")}
+          <br />
+          <small>Arrivé: {Arrivé_service}</small>
         </StyledTableCell>
 
         <StyledTableCell
@@ -159,25 +162,22 @@ const Event = (props) => {
           className={`cell-depart-${index}`}
           align="center"
         >
-          {moment(Départ).format(formatTime) !== moment().format(formatTime)
-            ? moment(Départ).format(formatTime)
-            : "à venir..."}
+          {Départ ? Départ : "à venir..."}
         </StyledTableCell>
         <StyledTableCell
           data-priority={Status}
           className={`cell-ready-${index}`}
           align="center"
         >
-          {moment(Ready).format(formatTime) !== moment().format(formatTime)
-            ? moment(Ready).format(formatTime)
-            : "à venir..."}
+          {Ready ? Ready : "à venir..."}
         </StyledTableCell>
         <StyledTableCell
           data-priority={Status}
           className={`cell-repas-${index}`}
           align="center"
+          style={{ fontWeight: 700 }}
         >
-          {moment(Repas).format(formatTime)}
+          {moment(Date_et_Heure).format(formatTime)}
         </StyledTableCell>
 
         <StyledTableCell

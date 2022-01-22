@@ -80,7 +80,7 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
           Ready
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
-          Repas
+          Heure repas
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="right">
           Notes
