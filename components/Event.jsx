@@ -10,8 +10,24 @@ import Marquee from "react-fast-marquee";
 import ReactMarkdown from "react-markdown";
 import Alerts from "./Alerts";
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+function colorSwitch(status) {
+  switch (true) {
+    case status === "Non-confirmé":
+      return "#f1e577";
+    case status === "Confirmé":
+      return "#b3dda8";
+    case status === "Urgent":
+      return "#dda8a8";
+
+    default:
+      return "";
+  }
+}
+
+const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
+  backgroundColor: colorSwitch(status),
+
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
@@ -93,6 +109,7 @@ const Event = (props) => {
         style={{ backgroundColor: Status === "En attente" && "#fff70038" }}
       >
         <StyledTableCell
+          status={Status}
           sx={{
             width: 10,
             border: 0,
@@ -107,6 +124,7 @@ const Event = (props) => {
           align="left"
         ></StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
@@ -126,6 +144,7 @@ const Event = (props) => {
           </Typography>
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-pers-${index}`}
           align="center"
@@ -133,6 +152,7 @@ const Event = (props) => {
           {Nb_de_personnes} pers.
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-pains-${index}`}
           align="center"
@@ -140,6 +160,7 @@ const Event = (props) => {
           {Pains}
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-vans-${index}`}
           align="center"
@@ -147,6 +168,7 @@ const Event = (props) => {
           {Vans}
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           className={`cell-serveurs-${index}`}
           align="center"
           data-priority={Status}
@@ -158,6 +180,7 @@ const Event = (props) => {
         </StyledTableCell>
 
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-depart-${index}`}
           align="center"
@@ -165,6 +188,7 @@ const Event = (props) => {
           {Départ ? Départ : "à venir..."}
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-ready-${index}`}
           align="center"
@@ -172,6 +196,7 @@ const Event = (props) => {
           {Ready ? Ready : "à venir..."}
         </StyledTableCell>
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-repas-${index}`}
           align="center"
@@ -181,6 +206,7 @@ const Event = (props) => {
         </StyledTableCell>
 
         <StyledTableCell
+          status={Status}
           data-priority={Status}
           className={`cell-notes-${index}`}
           align="right"
