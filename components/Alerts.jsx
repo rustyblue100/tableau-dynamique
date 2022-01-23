@@ -74,7 +74,7 @@ export default function Alerts() {
         cellStateChanged &&
           [cellStateChanged].map((cell) => {
             if (cellPriority === "Confirmé" || cellPriority2 === "Confirmé") {
-              cell.classList.add("alerted-green");
+              cell.classList.add("alerted-red");
             }
 
             if (cellPriority === "Urgent" || cellPriority2 === "Urgent") {
@@ -86,18 +86,18 @@ export default function Alerts() {
               cellPriority === "Non-confirmé" ||
               cellPriority2 === "Non-confirmé"
             ) {
-              cell.classList.add("alerted-yellow");
+              cell.classList.add("alerted-red");
             }
           });
 
         setTimeout(() => {
           cellStateChanged &&
             [cellStateChanged].map((cell) => {
-              cell.classList.remove("alerted-green");
               cell.classList.remove("alerted-red");
-              cell.classList.remove("alerted-yellow");
+              cell.classList.remove("alerted-red");
+              cell.classList.remove("alerted-red");
             });
-        }, 30000); // Alert highlight duration
+        }, 43200000); // Alert highlight duration
       });
     });
 

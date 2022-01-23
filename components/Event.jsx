@@ -13,11 +13,11 @@ import Alerts from "./Alerts";
 function colorSwitch(status) {
   switch (true) {
     case status === "Non-confirmé":
-      return "#f1e577";
+      return "#ffffff";
     case status === "Confirmé":
-      return "#b3dda8";
+      return "#23CB59";
     case status === "Urgent":
-      return "#dda8a8";
+      return "#F56E00";
 
     default:
       return "";
@@ -110,16 +110,6 @@ const Event = (props) => {
       >
         <StyledTableCell
           status={Status}
-          sx={{
-            width: 10,
-            border: 0,
-            backgroundColor:
-              Status === "Non-confirmé"
-                ? "#f1e577"
-                : Status === "Urgent"
-                ? "#dda8a8"
-                : "#b3dda8",
-          }}
           data-priority={Status}
           align="left"
         ></StyledTableCell>
@@ -246,6 +236,7 @@ const Event = (props) => {
           sx={{ py: 1, typography: "body1" }}
         >
           <Marquee
+            style={{ color: "#D0342C", fontWeight: 500 }}
             speed={80}
             gradient={false}
             pauseOnClick={true}
