@@ -88,14 +88,21 @@ const Header = ({ message, auth }) => {
           textAlign="center"
           display="flex"
           justifyContent="center"
-          py={1}
+          py={2}
         >
           {message[0].fields.Message}
         </Typography>
       )}
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" sx={{ px: 5 }}>
         <Grid container item md={3} xl={3}>
-          {weather()}
+          {/*       {weather()} */}
+
+          <Item elevation={0}>
+            <Typography variant="h1" sx={{ fontSize: "3.4rem" }}>
+              {" "}
+              {moment().format(formatTime)}
+            </Typography>
+          </Item>
         </Grid>
 
         <Grid
@@ -107,42 +114,20 @@ const Header = ({ message, auth }) => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
-          <Item elevation={0}>
-            <Typography variant="h1"> {moment().format(formatTime)}</Typography>
-          </Item>
-        </Grid>
+        ></Grid>
 
         <Grid item md={3} xl={3}>
           <Item elevation={0}>
-            <Box>
-              <List dense={false} sx={{ float: "right" }}>
-                <ListItemButton sx={{ p: 0 }}>
-                  <SquareIcon sx={{ color: "#f1e577", mr: 1, p: 0 }} />
-                  <ListItemText primary="à confirmé" />
-                </ListItemButton>
-                <ListItemButton sx={{ p: 0 }}>
-                  <SquareIcon sx={{ color: "#b3dda8", mr: 1, p: 0 }} />
-                  <ListItemText primary="confirmé" />
-                </ListItemButton>
-                <ListItemButton sx={{ p: 0 }}>
-                  <SquareIcon sx={{ color: "#dda8a8", mr: 1, p: 0 }} />
-                  <ListItemText primary="urgent" />
-                </ListItemButton>
-                <ListItemButton sx={{ p: 0 }} onClick={handleLogOut}>
-                  <LogoutIcon sx={{ mr: 1, p: 0 }} color="info" />
-                  <ListItemText
-                    primary="déconnexion"
-                    onClick={handleLogOut}
-                    sx={{ fontSize: 1 }}
-                  ></ListItemText>
-                </ListItemButton>
-              </List>
+            <Box sx={{ float: "right" }}>
+              <img src="/qr-mobile.png" width="100" />
+              {/*            <Typography variant="body1" component="div">
+                Mobile
+              </Typography> */}
             </Box>
 
             <Box
               style={{
-                marginTop: "2rem",
+                /*  marginTop: "2rem", */
                 textAlign: "right",
               }}
             >
