@@ -27,6 +27,8 @@ function colorSwitch(status) {
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
   backgroundColor: colorSwitch(status),
+  /*   border: `1px solid ${colorSwitch(status)}`, */
+  borderBottom: `1px solid ${colorSwitch(status)}`,
 
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -47,10 +49,10 @@ const DetailslNote = styled("a")(({ theme }) => ({
   fontWeight: 400,
 }));
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
+const StyledTableRow = styled(TableRow)(({ theme, status }) => ({
   backgroundColor: theme.palette.action.hover,
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: colorSwitch(status),
   },
   // hide last border
   "&:last-child td, &:last-child th": {
@@ -106,24 +108,27 @@ const Event = (props) => {
   return (
     <>
       <StyledTableRow
+        status={Status}
         style={{ backgroundColor: Status === "En attente" && "#fff70038" }}
       >
-        <StyledTableCell
+        {/*         <StyledTableCell
           status={Status}
           data-priority={Status}
           align="left"
-        ></StyledTableCell>
+        ></StyledTableCell> */}
         <StyledTableCell
           status={Status}
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
+          sx={{ fontSize: "20px", fontWeight: 500 }}
         >
           {Nom}
 
           <Typography
             data-priority={Status}
             pt={1}
+            mb={0}
             variant="regie"
             paragraph="p"
           >
@@ -200,7 +205,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-notes-${index}`}
           align="right"
-          sx={{ typography: "body1", width: 400 }}
+          sx={{ typography: "body1" /* , width: 200 */ }}
         >
           {Notes}
           <br></br>
@@ -227,16 +232,16 @@ const Event = (props) => {
         </StyledTableCell>
       </StyledTableRow>
       {/*  {Allergies ? ( */}
-      <StyledTableRow>
+      <StyledTableRow status={Status}>
         <StyledTableCell
           data-priority={Status}
           align="left"
           colSpan={10}
           className={`marquee-wrap-${index}`}
-          sx={{ py: 1, typography: "body1" }}
+          sx={{ py: 1, typography: "body1", border: "none" }}
         >
           <Marquee
-            style={{ color: "#D0342C", fontWeight: 500 }}
+            style={{ color: "#D0342C", fontWeight: 500, border: "none" }}
             speed={80}
             gradient={false}
             pauseOnClick={true}

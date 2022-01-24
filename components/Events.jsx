@@ -1,4 +1,5 @@
 import {
+  Container,
   Box,
   CircularProgress,
   Grid,
@@ -60,7 +61,7 @@ export default function Events({
     setTabIndex(newValue);
   };
 
-  const slideDataValues = width > 3200 ? [0, 5, 5, 10] : [0, 3, 3, 10]; // Number of row per slide
+  const slideDataValues = [0, 5, 5, 10]; // Number of row per slide
 
   const pagination = {
     clickable: true,
@@ -88,9 +89,20 @@ export default function Events({
   const formatTime = "dddd D MMM";
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Header message={message} />
+    <Container
+      sx={{
+        width: "100%",
+        pt: 3,
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+      maxWidth="false"
+      disableGutters
+    >
       <Tabs
+        textColor="secondary"
+        indicatorColor="secondary"
         variant="fullWidth"
         orientation="horizontal"
         value={value}
@@ -106,7 +118,7 @@ export default function Events({
       </Tabs>
       <TabPanel value={value} index={0}>
         {events ? (
-          events.length < 5 ? (
+          events.length < 6 ? (
             <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 4 }}
@@ -181,6 +193,7 @@ export default function Events({
           <Taches afaire={afaire} />
         </Box>
       </TabPanel>
-    </Box>
+      <Header message={message} />
+    </Container>
   );
 }

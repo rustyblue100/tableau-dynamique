@@ -28,9 +28,29 @@ const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
         : tabindex === 2
         ? typeMod(type)
         : "",
+
+    borderLeft: `1px solid ${
+      tabindex === 0
+        ? theme.palette.common.black
+        : tabindex === 1
+        ? "#e7ae2d"
+        : tabindex === 2
+        ? typeMod(type)
+        : ""
+    }`,
+
+    borderRight: `1px solid ${
+      tabindex === 0
+        ? theme.palette.common.black
+        : tabindex === 1
+        ? "#e7ae2d"
+        : tabindex === 2
+        ? typeMod(type)
+        : ""
+    }`,
     color:
       tabindex === 0 ? theme.palette.common.white : theme.palette.common.black,
-    fontSize: 20,
+    fontSize: 16,
     lineHeight: 1,
     [theme.breakpoints.up("xl")]: {
       fontSize: 48,
@@ -45,14 +65,14 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
   return type === "event" ? (
     <TableHead type="event">
       <TableRow>
-        <StyledTableCell
+        {/*         <StyledTableCell
           sx={{
             width: 15,
           }}
           tabindex={tabIndexValue}
           type="event"
           align="center"
-        ></StyledTableCell>
+        ></StyledTableCell> */}
         <StyledTableCell tabindex={tabIndexValue} type="event">
           Films
         </StyledTableCell>
@@ -80,7 +100,7 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
           Ready
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
-          Heure repas
+          Repas
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="right">
           Notes

@@ -30,7 +30,7 @@ const Header = ({ message, auth }) => {
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
-    textAlign: "center",
+    textAlign: "right",
     lineHeight: 0.5,
   }));
 
@@ -79,26 +79,13 @@ const Header = ({ message, auth }) => {
     );
   }
   return (
-    <Box>
-      {message && message[0].fields.Publier && (
-        <Typography
-          variant="marquee"
-          color="#ffffff"
-          backgroundColor="#e00000"
-          textAlign="center"
-          display="flex"
-          justifyContent="center"
-          py={2}
-        >
-          {message[0].fields.Message}
-        </Typography>
-      )}
-      <Grid container alignItems="center" sx={{ px: 5 }}>
+    <Box mt="auto" pb={3}>
+      <Grid container alignItems="center" sx={{ px: 1 }}>
         <Grid container item md={3} xl={3}>
           {/*       {weather()} */}
 
           <Item elevation={0}>
-            <Typography variant="h1" sx={{ fontSize: "3.4rem" }}>
+            <Typography variant="h1" /* sx={{ fontSize: "28px" }} */>
               {" "}
               {moment().format(formatTime)}
             </Typography>
@@ -114,15 +101,35 @@ const Header = ({ message, auth }) => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        ></Grid>
+        >
+          {message && message[0].fields.Publier && (
+            <Typography
+              variant="marquee"
+              color="#ffffff"
+              backgroundColor="#e00000"
+              textAlign="center"
+              display="flex"
+              justifyContent="center"
+              p={1}
+            >
+              {message[0].fields.Message}
+            </Typography>
+          )}
+        </Grid>
 
         <Grid item md={3} xl={3}>
           <Item elevation={0}>
             <Box sx={{ float: "right" }}>
-              <img src="/qr-mobile.png" width="100" />
-              {/*            <Typography variant="body1" component="div">
-                Mobile
-              </Typography> */}
+              <img src="/qr-mobile.png" width="120" />
+              <Typography
+                variant="regie"
+                component="div"
+                sx={{ pr: "8px", lineHeight: 1.25 }}
+              >
+                <strong>info@debonspetitsplats.com</strong>
+                <br />
+                <strong>555555</strong>
+              </Typography>
             </Box>
 
             <Box

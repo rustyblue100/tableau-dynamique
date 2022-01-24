@@ -17,6 +17,10 @@ const theme = createTheme({
     primary: {
       main: "#db4f44",
     },
+
+    secondary: {
+      main: "#000000",
+    },
     common: {
       black: "#222427",
     },
@@ -26,25 +30,22 @@ const theme = createTheme({
     fontFamily: "Helvetica Neue, Inter",
     h1: {
       color: "#222427",
-      fontSize: 48,
       fontWeight: 500,
-      "@media (min-width:3200px)": { fontSize: 96 },
+      fontSize: 42,
     },
     body1: {
       color: "#222427",
-      fontSize: 16,
-      "@media (min-width:3200px)": { fontSize: 32 },
+      fontSize: 14,
     },
     body2: {
-      fontSize: 24,
-      "@media (min-width:3200px)": { fontSize: 58 },
+      fontSize: 20,
     },
 
-    marquee: { fontSize: 18, "@media (min-width:3200px)": { fontSize: 36 } },
-    button: { fontSize: 16, "@media (min-width:3200px)": { fontSize: 32 } },
+    marquee: { fontSize: 28 },
+    button: { fontSize: 16 },
     regie: {
-      fontSize: 14,
-      "@media (min-width:3200px)": { fontSize: 24 },
+      fontSize: 12,
+      fontWeight: 400,
     },
   },
 });
