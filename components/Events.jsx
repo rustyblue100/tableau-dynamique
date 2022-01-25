@@ -103,10 +103,10 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={1}>
         {eventsDemain ? (
-          eventsDemain.length < 5 ? (
+          eventsDemain.length < 6 ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 3 }}
+                sx={{ minWidth: 700, mt: 1 }}
                 aria-label="customized table"
               >
                 <TableHeadRow
