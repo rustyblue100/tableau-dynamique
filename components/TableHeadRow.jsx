@@ -112,7 +112,7 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
           Ready
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
-          Repas
+          Lunch
         </StyledTableCell>
         <StyledTableCell tabindex={tabIndexValue} type="event" align="right">
           Notes
