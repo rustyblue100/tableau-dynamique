@@ -36,11 +36,11 @@ const theme = createTheme({
     },
     body1: {
       color: "#222427",
-      fontSize: 8,
+      fontSize: 10,
       lineHeight: 1.25,
     },
     body2: {
-      fontSize: 12,
+      fontSize: 13,
     },
 
     marquee: { fontSize: 10 },

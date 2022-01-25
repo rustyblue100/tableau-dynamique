@@ -14,7 +14,7 @@ import colorSwitch from "../utils/colorSwitcher";
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
   lineHeight: 1.5,
-  padding: 7,
+  padding: 6,
   backgroundColor: colorSwitch(status),
   /*   border: `1px solid ${colorSwitch(status)}`, */
   borderBottom: `1px solid ${colorSwitch(status)}`,
