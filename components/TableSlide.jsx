@@ -52,7 +52,7 @@ const TableSlide = ({ slideData, events, eventsDemain, tabIndexValue }) => {
         enabled={true}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 6000,
+          delay: 15000,
           disableOnInteraction: false,
         }}
         onSwiper={setSwiperRef}

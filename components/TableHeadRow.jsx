@@ -6,6 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
+import colorSwitch from "../utils/colorSwitcher";
 
 function typeMod(type) {
   switch (true) {
@@ -20,6 +21,7 @@ function typeMod(type) {
 
 const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
   [`&.${tableCellClasses.head}`]: {
+    padding: 4,
     backgroundColor:
       tabindex === 0
         ? theme.palette.common.black
@@ -30,6 +32,16 @@ const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
         : "",
 
     borderLeft: `1px solid ${
+      tabindex === 0
+        ? theme.palette.common.black
+        : tabindex === 1
+        ? "#e7ae2d"
+        : tabindex === 2
+        ? typeMod(type)
+        : ""
+    }`,
+
+    borderBottom: `1px solid ${
       tabindex === 0
         ? theme.palette.common.black
         : tabindex === 1
@@ -50,7 +62,7 @@ const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
     }`,
     color:
       tabindex === 0 ? theme.palette.common.white : theme.palette.common.black,
-    fontSize: 16,
+    fontSize: 12,
     lineHeight: 1,
     [theme.breakpoints.up("xl")]: {
       fontSize: 48,

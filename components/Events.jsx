@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useViewport } from "../utils/hooks";
 import Event from "./Event";
 import TableHeadRow from "./TableHeadRow";
@@ -63,36 +63,13 @@ export default function Events({
 
   const slideDataValues = [0, 5, 5, 10]; // Number of row per slide
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
-
-  const group =
-    afaire &&
-    afaire.reduce((r, a) => {
-      r[a.fields.Date] = [...(r[a.fields.Date] || []), a];
-      return r;
-    }, {});
-
-  console.log(
-    events /*  &&
-      events.filter(
-        (e) =>
-          e.fields.Status === "Urgent" ||
-          e.fields.Status === "Non-confirmé" ||
-          e.fields.Status === "Confirmé"
-      ) */
-  );
   const formatTime = "dddd D MMM";
 
   return (
     <Container
       sx={{
         width: "100%",
-        pt: 3,
+        pt: 0,
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
@@ -103,7 +80,7 @@ export default function Events({
       <Tabs
         textColor="secondary"
         indicatorColor="secondary"
-        variant="fullWidth"
+        /*        variant="fullWidth" */
         orientation="horizontal"
         value={value}
         onChange={handleChange}
@@ -121,7 +98,7 @@ export default function Events({
           events.length < 6 ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 4 }}
+                sx={{ minWidth: 700, mt: 1 }}
                 aria-label="customized table"
               >
                 <TableHeadRow tabIndexValue={value} type="event" />
@@ -155,7 +132,7 @@ export default function Events({
           eventsDemain.length < 5 ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 4 }}
+                sx={{ minWidth: 700, mt: 3 }}
                 aria-label="customized table"
               >
                 <TableHeadRow
@@ -193,7 +170,7 @@ export default function Events({
           <Taches afaire={afaire} />
         </Box>
       </TabPanel>
-      <Header message={message} />
+      <Footer message={message} />
     </Container>
   );
 }

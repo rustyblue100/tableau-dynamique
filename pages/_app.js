@@ -8,11 +8,12 @@ const theme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 900,
-      lg: 1200,
+      md: 800,
+      lg: 980,
       xl: 3200,
     },
   },
+
   palette: {
     primary: {
       main: "#db4f44",
@@ -31,20 +32,21 @@ const theme = createTheme({
     h1: {
       color: "#222427",
       fontWeight: 500,
-      fontSize: 42,
+      fontSize: 20,
     },
     body1: {
       color: "#222427",
-      fontSize: 14,
+      fontSize: 8,
+      lineHeight: 1.25,
     },
     body2: {
-      fontSize: 20,
+      fontSize: 12,
     },
 
-    marquee: { fontSize: 28 },
-    button: { fontSize: 16 },
+    marquee: { fontSize: 10 },
+    button: { fontSize: 10, padding: 0 },
     regie: {
-      fontSize: 12,
+      fontSize: 6,
       fontWeight: 400,
     },
   },

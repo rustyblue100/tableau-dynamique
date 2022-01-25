@@ -9,23 +9,12 @@ import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import ReactMarkdown from "react-markdown";
 import Alerts from "./Alerts";
-
-function colorSwitch(status) {
-  switch (true) {
-    case status === "Non-confirmé":
-      return "#ffffff";
-    case status === "Confirmé":
-      return "#23CB59";
-    case status === "Urgent":
-      return "#F56E00";
-
-    default:
-      return "";
-  }
-}
+import colorSwitch from "../utils/colorSwitcher";
 
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
+  lineHeight: 1.5,
+  padding: 10,
   backgroundColor: colorSwitch(status),
   /*   border: `1px solid ${colorSwitch(status)}`, */
   borderBottom: `1px solid ${colorSwitch(status)}`,
@@ -40,10 +29,8 @@ const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
 const DetailslNote = styled("a")(({ theme }) => ({
   /*   border: `1px solid #2e95ec`,
   padding: "2px 6px", */
-  fontSize: 32,
-  [theme.breakpoints.up("xl")]: {
-    fontSize: 54,
-  },
+  fontSize: 16,
+
   borderRadius: 4,
   color: theme.palette.info.main,
   fontWeight: 400,
@@ -121,13 +108,13 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
-          sx={{ fontSize: "20px", fontWeight: 500 }}
+          sx={{ fontWeight: 500, width: 160 }}
         >
           {Nom}
 
           <Typography
             data-priority={Status}
-            pt={1}
+            pt={0}
             mb={0}
             variant="regie"
             paragraph="p"
@@ -238,7 +225,7 @@ const Event = (props) => {
           align="left"
           colSpan={10}
           className={`marquee-wrap-${index}`}
-          sx={{ py: 1, typography: "body1", border: "none" }}
+          sx={{ py: "3px", typography: "body1", border: "none" }}
         >
           <Marquee
             style={{ color: "#D0342C", fontWeight: 500, border: "none" }}
@@ -248,7 +235,7 @@ const Event = (props) => {
             delay={delayMarquee(index)}
             data-priority={Status}
           >
-            {Allergies ? `↑↑ Allergies: ${Allergies} ↑↑` : "\u00A0"}
+            {Allergies ? `↑  ${Allergies} ↑` : "\u00A0"}
           </Marquee>
         </StyledTableCell>
       </StyledTableRow>

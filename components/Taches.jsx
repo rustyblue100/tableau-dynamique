@@ -46,16 +46,10 @@ const AFaire = ({ afaire }) => {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      fontSize: 16,
-      [theme.breakpoints.up("xl")]: {
-        fontSize: 28,
-      },
+      fontSize: 8,
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 16,
-      [theme.breakpoints.up("xl")]: {
-        fontSize: 28,
-      },
+      fontSize: 8,
     },
   }));
 
@@ -79,17 +73,18 @@ const AFaire = ({ afaire }) => {
                 container
                 justifyContent="center"
                 maxWidth="100%"
-                columnSpacing={{ xs: 1, xl: 4 }}
+                columnSpacing={{ xs: 1, xl: 0 }}
               >
                 <Grid item>
                   <Card
                     sx={{
-                      minWidth: { sm: 500, xl: 1200 },
-                      maxWidth: { xs: 500, lg: 800, xl: 3000 },
+                      minWidth: { sm: 400, xl: 1200 },
+                      maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >
                     <CardContent>
                       <CardHeader
+                        titleTypographyProps={{ fontSize: 16 }}
                         title="Plats Frais"
                         subheader={moment(t[0].fields.Date).format(
                           "dddd D MMM"
@@ -130,12 +125,13 @@ const AFaire = ({ afaire }) => {
                 <Grid item>
                   <Card
                     sx={{
-                      minWidth: { sm: 500, xl: 1200 },
-                      maxWidth: { xs: 500, lg: 800, xl: 3000 },
+                      minWidth: { sm: 400, xl: 1200 },
+                      maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >
                     <CardContent>
                       <CardHeader
+                        titleTypographyProps={{ fontSize: 16 }}
                         title="Plats Congelés"
                         subheader={moment(t[0].fields.Date).format(
                           "dddd D MMM"

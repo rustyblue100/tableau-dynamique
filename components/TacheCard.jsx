@@ -8,10 +8,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 16,
-    [theme.breakpoints.up("xl")]: {
-      fontSize: 28,
-    },
+    fontSize: 8,
   },
 }));
 

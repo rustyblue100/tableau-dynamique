@@ -10,6 +10,7 @@ import {
   Paper,
   Typography,
   Button,
+  Divider,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
@@ -34,16 +35,16 @@ const Header = ({ message, auth }) => {
     lineHeight: 0.5,
   }));
 
-  async function handleLogOut(e) {
+  /*   async function handleLogOut(e) {
     try {
       await logout();
       router.push("/");
     } catch (error) {
       console.log(error);
     }
-  }
+  } */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const fetchData = async () => {
       await axios
         .get(
@@ -64,9 +65,9 @@ const Header = ({ message, auth }) => {
     return () => {
       fetchData();
     };
-  }, []);
+  }, []); */
 
-  function weather() {
+  /*   function weather() {
     return (
       weatherData &&
       weatherData.map((d, i) => (
@@ -77,11 +78,20 @@ const Header = ({ message, auth }) => {
         </Grid>
       ))
     );
-  }
+  } */
   return (
-    <Box mt="auto" pb={3}>
-      <Grid container alignItems="center" sx={{ px: 1 }}>
-        <Grid container item md={3} xl={3}>
+    <Box
+      mt="auto"
+      backgroundColor="white"
+      sx={{ position: "relative", top: "-6px" }}
+    >
+      <Grid
+        container
+        justifyContent="space-around"
+        alignItems="center"
+        sx={{ px: 1 }}
+      >
+        <Grid container item md={2}>
           {/*       {weather()} */}
 
           <Item elevation={0}>
@@ -94,8 +104,7 @@ const Header = ({ message, auth }) => {
 
         <Grid
           item
-          md={6}
-          xl={6}
+          md={8}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -110,26 +119,29 @@ const Header = ({ message, auth }) => {
               textAlign="center"
               display="flex"
               justifyContent="center"
-              p={1}
+              p="3px"
             >
               {message[0].fields.Message}
             </Typography>
           )}
         </Grid>
 
-        <Grid item md={3} xl={3}>
-          <Item elevation={0}>
+        <Grid item md={2}>
+          <Item
+            elevation={0}
+            sx={{ display: "flex", alignItems: "center", p: 0, float: "right" }}
+          >
+            <Typography
+              variant="regie"
+              component="div"
+              sx={{ pr: "8px", lineHeight: 1.25 }}
+            >
+              <strong>info@debonspetitsplats.com</strong>
+              <br />
+              <strong>555555</strong>
+            </Typography>
             <Box sx={{ float: "right" }}>
-              <img src="/qr-mobile.png" width="120" />
-              <Typography
-                variant="regie"
-                component="div"
-                sx={{ pr: "8px", lineHeight: 1.25 }}
-              >
-                <strong>info@debonspetitsplats.com</strong>
-                <br />
-                <strong>555555</strong>
-              </Typography>
+              <img src="/qr-mobile.png" width="48" />
             </Box>
 
             <Box
