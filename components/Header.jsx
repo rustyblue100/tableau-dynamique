@@ -11,6 +11,8 @@ import {
   Typography,
   Button,
   Divider,
+  Tabs,
+  Tab,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
@@ -22,18 +24,30 @@ import { useNavigatorOnLine } from "../utils/useOnlineStatus";
 import { logout } from "../utils/firebase";
 import router from "next/router";
 
-const Header = ({ message, auth }) => {
+const Header = ({ message, auth, value, setValue, setTabIndex }) => {
   const [weatherData, setWeatherData] = useState("");
-  const formatTime = "HH:mm";
+  const formatTime = "ddd DD MMM";
 
   const isOnline = useNavigatorOnLine();
 
+  const handleChange = (_event, newValue) => {
+    setValue(newValue);
+    setTabIndex(newValue);
+  };
+
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(1),
+
     textAlign: "right",
     lineHeight: 0.5,
   }));
+
+  function a11yProps(index) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
 
   /*   async function handleLogOut(e) {
     try {
@@ -79,26 +93,35 @@ const Header = ({ message, auth }) => {
       ))
     );
   } */
+
   return (
-    <Box
-      mt="auto"
-      backgroundColor="white"
-      sx={{ position: "relative", top: "-9px" }}
-    >
+    <Box backgroundColor="white" sx={{ p: 0, m: 0 }}>
       <Grid
         container
         justifyContent="space-around"
         alignItems="center"
-        sx={{ px: 1 }}
+        sx={{ p: 0 }}
       >
         <Grid container item md={2}>
           {/*       {weather()} */}
 
           <Item elevation={0}>
-            <Typography variant="h1" /* sx={{ fontSize: "28px" }} */>
-              {" "}
-              {moment().format(formatTime)}
-            </Typography>
+            <Tabs
+              textColor="secondary"
+              indicatorColor="secondary"
+              variant="fullWidth"
+              orientation="horizontal"
+              value={value}
+              onChange={handleChange}
+              aria-label="basic tabs example"
+            >
+              <Tab label={moment().format(formatTime)} {...a11yProps(0)} />
+              <Tab
+                label={moment().add(1, "days").format(formatTime)}
+                {...a11yProps(1)}
+              />
+              <Tab label="À faire" {...a11yProps(2)} />
+            </Tabs>
           </Item>
         </Grid>
 
@@ -119,7 +142,7 @@ const Header = ({ message, auth }) => {
               textAlign="center"
               display="flex"
               justifyContent="center"
-              p="3px"
+              p={1}
             >
               {message[0].fields.Message}
             </Typography>
@@ -129,7 +152,13 @@ const Header = ({ message, auth }) => {
         <Grid item md={2}>
           <Item
             elevation={0}
-            sx={{ display: "flex", alignItems: "center", p: 0, float: "right" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              p: 0,
+              pr: "4px",
+              float: "right",
+            }}
           >
             <Typography
               variant="regie"
@@ -151,12 +180,8 @@ const Header = ({ message, auth }) => {
               }}
             >
               {!isOnline && (
-                <Box
-                  sx={{
-                    marginBottom: "1rem",
-                  }}
-                >
-                  <Alert variant="filled" severity="error">
+                <Box sx={{}}>
+                  <Alert variant="filled" severity="warning">
                     Offline
                   </Alert>
                 </Box>

@@ -44,7 +44,7 @@ const theme = createTheme({
     },
 
     marquee: { fontSize: 10 },
-    button: { fontSize: 10, padding: 0 },
+    button: { fontSize: 8, padding: 0 },
     regie: {
       fontSize: 6,
       fontWeight: 400,

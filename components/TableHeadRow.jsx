@@ -21,7 +21,8 @@ function typeMod(type) {
 
 const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
   [`&.${tableCellClasses.head}`]: {
-    padding: 4,
+    padding: "4px 8px 4px 8px",
+
     backgroundColor:
       tabindex === 0
         ? theme.palette.common.black

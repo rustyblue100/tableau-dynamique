@@ -14,7 +14,7 @@ import colorSwitch from "../utils/colorSwitcher";
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
   lineHeight: 1.5,
-  padding: 10,
+  padding: 7,
   backgroundColor: colorSwitch(status),
   /*   border: `1px solid ${colorSwitch(status)}`, */
   borderBottom: `1px solid ${colorSwitch(status)}`,
@@ -166,6 +166,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-depart-${index}`}
           align="center"
+          style={{ fontWeight: 700 }}
         >
           {Départ ? Départ : "à venir..."}
         </StyledTableCell>
@@ -182,7 +183,6 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-repas-${index}`}
           align="center"
-          style={{ fontWeight: 700 }}
         >
           {moment(Date_et_Heure).format(formatTime)}
         </StyledTableCell>
