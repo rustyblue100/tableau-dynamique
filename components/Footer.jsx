@@ -83,7 +83,7 @@ const Header = ({ message, auth }) => {
     <Box
       mt="auto"
       backgroundColor="white"
-      sx={{ position: "relative", top: "-6px" }}
+      sx={{ position: "relative", top: "-9px" }}
     >
       <Grid
         container
