@@ -46,6 +46,7 @@ const AFaire = ({ afaire }) => {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
+      padding: 0,
       fontSize: 8,
     },
     [`&.${tableCellClasses.body}`]: {
