@@ -89,7 +89,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 12,
+        fontSize: 10,
       },
     },
   },
