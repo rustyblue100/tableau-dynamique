@@ -8,9 +8,9 @@ const theme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 800,
-      lg: 980,
-      xl: 3200,
+      md: 900,
+      lg: 1400,
+      xl: 2400,
     },
   },
 
@@ -36,18 +36,60 @@ const theme = createTheme({
     },
     body1: {
       color: "#222427",
-      fontSize: 10,
+      fontSize: 12,
+
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 18,
+      },
+
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 12,
+      },
       lineHeight: 1.25,
     },
     body2: {
-      fontSize: 13,
+      fontSize: 15,
+
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 20,
+      },
+
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 15,
+      },
     },
 
-    marquee: { fontSize: 10 },
-    button: { fontSize: 8, padding: 0 },
+    marquee: {
+      fontSize: 13,
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 18,
+      },
+
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 13,
+      },
+    },
+    button: {
+      fontSize: 8,
+      padding: 0,
+
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 14,
+      },
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 10,
+      },
+    },
     regie: {
-      fontSize: 6,
+      fontSize: 9,
       fontWeight: 400,
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 12,
+      },
+
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 9,
+      },
     },
   },
 });

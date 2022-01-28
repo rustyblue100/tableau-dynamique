@@ -15,6 +15,9 @@ const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
   lineHeight: 1.5,
   padding: 6,
+  [theme.breakpoints.up("lg")]: {
+    padding: 11,
+  },
   backgroundColor: colorSwitch(status),
   /*   border: `1px solid ${colorSwitch(status)}`, */
   borderBottom: `1px solid ${colorSwitch(status)}`,
@@ -29,8 +32,10 @@ const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
 const DetailslNote = styled("a")(({ theme }) => ({
   /*   border: `1px solid #2e95ec`,
   padding: "2px 6px", */
-  fontSize: 16,
-
+  fontSize: 20,
+  [theme.breakpoints.up("lg")]: {
+    fontSize: 28,
+  },
   borderRadius: 4,
   color: theme.palette.info.main,
   fontWeight: 400,
@@ -108,7 +113,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
-          sx={{ fontWeight: 500, width: 160 }}
+          sx={{ fontWeight: 500, width: { xs: 176, lg: 340 } }}
         >
           {Nom}
 
@@ -121,7 +126,7 @@ const Event = (props) => {
           >
             Régie: {prenom_regisseurs && prenom_regisseurs}{" "}
             {nom_regisseurs && nom_regisseurs} <br />
-            Tél:{tel_regisseur && tel_regisseur} <br />
+            Tél: {tel_regisseur && tel_regisseur} <br />
             {Adresse}
           </Typography>
         </StyledTableCell>

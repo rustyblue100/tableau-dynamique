@@ -46,8 +46,13 @@ const AFaire = ({ afaire }) => {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      padding: 0,
+      padding: "4px 0",
       fontSize: 8,
+
+      [theme.breakpoints.up("lg")]: {
+        padding: "20px 0",
+        fontSize: 14,
+      },
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 8,
@@ -79,13 +84,14 @@ const AFaire = ({ afaire }) => {
                 <Grid item>
                   <Card
                     sx={{
-                      minWidth: { sm: 400, xl: 1200 },
+                      minWidth: { sm: 400, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >
                     <CardContent>
                       <CardHeader
-                        titleTypographyProps={{ fontSize: 16 }}
+                        sx={{ p: 0 }}
+                        titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
                         title="Plats Frais"
                         subheader={moment(t[0].fields.Date).format(
                           "dddd D MMM"
@@ -126,13 +132,14 @@ const AFaire = ({ afaire }) => {
                 <Grid item>
                   <Card
                     sx={{
-                      minWidth: { sm: 400, xl: 1200 },
+                      minWidth: { sm: 400, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >
                     <CardContent>
                       <CardHeader
-                        titleTypographyProps={{ fontSize: 16 }}
+                        sx={{ p: 0 }}
+                        titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
                         title="Plats Congelés"
                         subheader={moment(t[0].fields.Date).format(
                           "dddd D MMM"

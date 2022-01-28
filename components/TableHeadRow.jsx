@@ -65,8 +65,8 @@ const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
       tabindex === 0 ? theme.palette.common.white : theme.palette.common.black,
     fontSize: 12,
     lineHeight: 1,
-    [theme.breakpoints.up("xl")]: {
-      fontSize: 48,
+    [theme.breakpoints.up("lg")]: {
+      fontSize: 20,
     },
   },
   [`&.${tableCellClasses.body}`]: {

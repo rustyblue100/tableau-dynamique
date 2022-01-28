@@ -69,7 +69,7 @@ export default function Events({
 
       <TabPanel value={value} index={0}>
         {events ? (
-          events.length < 6 ? (
+          events.length < 30 ? (
             <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 1 }}
@@ -103,7 +103,7 @@ export default function Events({
       </TabPanel>
       <TabPanel value={value} index={1}>
         {eventsDemain ? (
-          eventsDemain.length < 6 ? (
+          eventsDemain.length < 30 ? (
             <TableContainer>
               <Table
                 sx={{ minWidth: 700, mt: 1 }}

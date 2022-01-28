@@ -4,13 +4,22 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: 2,
+
+  [theme.breakpoints.up("lg")]: {
+    padding: 10,
+  },
   [`&.${tableCellClasses.head}`]: {
     padding: 2,
+
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 8,
+    fontSize: 12,
+
+    [theme.breakpoints.up("lg")]: {
+      fontSize: 16,
+    },
   },
 }));
 
