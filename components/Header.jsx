@@ -137,7 +137,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
         >
           {message && message[0].fields.Publier && (
             <Typography
-              variant="marquee"
+              variant="message"
               color="#ffffff"
               backgroundColor="#e00000"
               textAlign="center"
