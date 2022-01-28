@@ -37,7 +37,6 @@ const theme = createTheme({
     body1: {
       color: "#222427",
       fontSize: 12,
-
       ["@media screen and (max-width: 1920px)"]: {
         fontSize: 18,
       },
@@ -55,7 +54,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 18,
+        fontSize: 19,
       },
     },
 
@@ -80,7 +79,7 @@ const theme = createTheme({
         fontSize: 9,
       },
     },
-    message: { fontSize: 80 },
+    message: { fontSize: 12 },
     regie: {
       fontSize: 9,
       fontWeight: 400,

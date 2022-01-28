@@ -14,7 +14,7 @@ import colorSwitch from "../utils/colorSwitcher";
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
   lineHeight: 1.5,
-  padding: 6,
+  padding: "11px 8px",
   [theme.breakpoints.up("lg")]: {
     padding: 11,
   },
@@ -97,6 +97,10 @@ const Event = (props) => {
 
   Alerts();
 
+  function truncate(string, limit) {
+    return string.length > limit ? `${string.substr(0, limit)}...` : string;
+  }
+
   return (
     <>
       <StyledTableRow
@@ -113,9 +117,9 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
-          sx={{ fontWeight: 500, width: { xs: 176, lg: 340 } }}
+          sx={{ fontWeight: 500, width: { xs: 186, lg: 340 } }}
         >
-          {Nom}
+          {truncate(Nom, 15)}
 
           <Typography
             data-priority={Status}
@@ -136,7 +140,7 @@ const Event = (props) => {
           className={`cell-pers-${index}`}
           align="center"
         >
-          {Nb_de_personnes} pers.
+          {Nb_de_personnes} p.
         </StyledTableCell>
         <StyledTableCell
           status={Status}
