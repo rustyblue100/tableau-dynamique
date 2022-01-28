@@ -43,7 +43,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 12,
+        fontSize: 16,
       },
       lineHeight: 1.25,
     },
@@ -55,7 +55,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 15,
+        fontSize: 18,
       },
     },
 
@@ -66,7 +66,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 13,
+        fontSize: 17,
       },
     },
     button: {
@@ -77,9 +77,10 @@ const theme = createTheme({
         fontSize: 14,
       },
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 10,
+        fontSize: 9,
       },
     },
+    message: { fontSize: 80 },
     regie: {
       fontSize: 9,
       fontWeight: 400,
@@ -88,7 +89,7 @@ const theme = createTheme({
       },
 
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 9,
+        fontSize: 12,
       },
     },
   },
