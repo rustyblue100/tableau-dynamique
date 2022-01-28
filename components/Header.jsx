@@ -144,7 +144,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               display="flex"
               justifyContent="center"
               sx={{ fontSize: "67%" }}
-              p={1}
+              p={"5px"}
             >
               {message[0].fields.Message}
             </Typography>

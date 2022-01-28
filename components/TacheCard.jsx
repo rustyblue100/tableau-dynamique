@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  padding: 2,
+  padding: 6,
 
   [theme.breakpoints.up("lg")]: {
     padding: 10,
