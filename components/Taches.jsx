@@ -31,11 +31,13 @@ const AFaire = ({ afaire }) => {
 
   var menu =
     afaireGroup &&
-    afaireGroup.map((t, i) => {
-      const formatDate = moment(t[0].fields.Date).format("dddd D MMM");
+    afaireGroup
+      /*       .sort((a, b) => (a > b ? 1 : -1)) */
+      .map((t, i) => {
+        const formatDate = moment(t[0].fields.Date).format("dddd D MMM");
 
-      return formatDate;
-    });
+        return formatDate;
+      });
 
   const pagination = {
     clickable: true,
@@ -83,6 +85,7 @@ const AFaire = ({ afaire }) => {
               >
                 <Grid item>
                   <Card
+                    elevation={0}
                     sx={{
                       minWidth: { sm: 300, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
@@ -131,6 +134,7 @@ const AFaire = ({ afaire }) => {
 
                 <Grid item>
                   <Card
+                    elevation={0}
                     sx={{
                       minWidth: { sm: 300, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
