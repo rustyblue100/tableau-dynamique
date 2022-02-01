@@ -127,10 +127,35 @@ const Films = () => {
     setReload(true);
   }, [message, reload]);
 
-  function filmsModTimezone() {
+  function filmsModTimezoneAuj() {
     return (
       films &&
       films.filter((d) => {
+        dayjs.extend(isBetween);
+        dayjs.extend(customParseFormat);
+        const format = "YYYY-MM-DD HH:mm:ss";
+        const data = dayjs(d.fields.Date_et_Heure)
+          .add(1, "seconds")
+          .format(format);
+        const yesterday = dayjs().subtract(1, "days").format("YYYY-MM-DD");
+        const nightStart = `${yesterday} 00:00`;
+        const nightEnd = `${yesterday} 05:00`;
+
+        return dayjs(dayjs().format(format)).isBetween(
+          `${dayjs().format("YYYY-MM-DD")} 00:00`,
+          `${dayjs().format("YYYY-MM-DD")} 05:00`
+        )
+          ? dayjs(data).isBetween(nightStart, nightEnd)
+          : dayjs(d.fields.Date_et_Heure).format("YYYY-MM-DD") ===
+              dayjs().format("YYYY-MM-DD");
+      })
+    );
+  }
+
+  /*   function filmsModTimezoneDemain() {
+    return (
+      filmsDemain &&
+      filmsDemain.filter((d) => {
         dayjs.extend(isBetween);
         dayjs.extend(customParseFormat);
         const format = "YYYY-MM-DD hh:mm";
@@ -144,15 +169,16 @@ const Films = () => {
           `${dayjs().format("YYYY-MM-DD")} 05:00`
         )
           ? dayjs(data).isBetween(nightStart, nightEnd)
-          : dayjs(d.fields.Date_et_Heure).format("DD") === dayjs().format("DD");
+          : dayjs(d.fields.Date_et_Heure).format("YYYY-MM-DD") ===
+              dayjs().format("YYYY-MM-DD");
       })
     );
-  }
+  } */
 
   return (
     <div>
       <Events
-        events={filmsModTimezone()}
+        events={filmsModTimezoneAuj()}
         message={message}
         eventsDemain={filmsDemain}
         afaire={afaire}
