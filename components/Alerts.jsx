@@ -1,8 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useSound from "use-sound";
 
 export default function Alerts() {
   const [playBellAlert] = useSound("/bell.wav", { volume: 0.3 });
+
+  const [notificationDownPageRow, setNotificationDownPageRow] = useState({
+    status: false,
+    message: "",
+  });
+
+  console.log(notificationDownPageRow);
 
   // Row highlight alert
   useEffect(() => {
@@ -13,8 +20,6 @@ export default function Alerts() {
     const observer = new MutationObserver((mutations) => {
       mutations.map((record) => {
         const parentNodeValue = record.target.parentNode;
-
-        /*         console.log(record); */
 
         const cellPriority =
           parentNodeValue.attributes[1] &&
@@ -88,6 +93,15 @@ export default function Alerts() {
             ) {
               cell.classList.add("alerted-red");
             }
+
+            if (parseInt(cell.classList[4].split("-")[2]) >= 4) {
+              setNotificationDownPageRow({
+                status: true,
+                message: `Modification ${
+                  parseInt(cell.classList[4].split("-")[2]) + 1
+                }ième film`,
+              });
+            }
           });
 
         setTimeout(() => {
@@ -131,4 +145,5 @@ export default function Alerts() {
         characterDataOldValue: false,
       });
   }, [playBellAlert]);
+  return "";
 }

@@ -178,7 +178,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
             <Box sx={{ float: "right", width: { sx: "48px", lg: "100px" } }}>
               <img
                 src="/qr-mobile.png"
-                style={{ maxWidth: "100%", minWidth: "48px" }}
+                style={{ maxWidth: "100%", minWidth: "48px", maxWidth: "48px" }}
               />
             </Box>
 
