@@ -2,6 +2,8 @@ import { Alert, Box, Grid, Paper, Typography, Tabs, Tab } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import "dayjs/locale/fr";
 import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import isBetween from "dayjs/plugin/isBetween";
 import { useState } from "react";
 import { useNavigatorOnLine } from "../utils/useOnlineStatus";
 
@@ -11,6 +13,8 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
   const format = "YYYY-MM-DD HH:mm:ss";
 
   dayjs.locale("fr");
+  dayjs.extend(isBetween);
+  dayjs.extend(customParseFormat);
 
   const isOnline = useNavigatorOnLine();
 
