@@ -34,13 +34,30 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const TacheCard = ({ info }) => {
-  const { Items, Quantités, Notes, Type } = info;
+  const { Items, Quantités, Notes, Type, Prêt } = info;
 
   return (
     <StyledTableRow>
-      <StyledTableCell align="left">{Items}</StyledTableCell>
-      <StyledTableCell align="right">{Quantités}</StyledTableCell>
-      <StyledTableCell style={{ fontSize: 6, maxWidth: 100 }} align="right">
+      <StyledTableCell
+        sx={{ textDecoration: Prêt && "line-through" }}
+        align="left"
+      >
+        {Items}
+      </StyledTableCell>
+      <StyledTableCell
+        sx={{ textDecoration: Prêt && "line-through" }}
+        align="right"
+      >
+        {Quantités}
+      </StyledTableCell>
+      <StyledTableCell
+        style={{
+          fontSize: 6,
+          maxWidth: 100,
+          textDecoration: Prêt && "line-through",
+        }}
+        align="right"
+      >
         {Notes}
       </StyledTableCell>
     </StyledTableRow>
