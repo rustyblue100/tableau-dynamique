@@ -141,6 +141,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-pers-${index}`}
           align="center"
+          style={{ fontWeight: 700 }}
         >
           {Nb_de_personnes} p.
         </StyledTableCell>
