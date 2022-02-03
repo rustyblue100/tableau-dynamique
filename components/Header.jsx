@@ -8,6 +8,7 @@ import { useNavigatorOnLine } from "../utils/useOnlineStatus";
 const Header = ({ message, auth, value, setValue, setTabIndex }) => {
   const [weatherData, setWeatherData] = useState("");
   const formatTime = "ddd DD MMM";
+  const format = "YYYY-MM-DD HH:mm:ss";
 
   dayjs.locale("fr");
 
@@ -98,9 +99,26 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label={dayjs().format(formatTime)} {...a11yProps(0)} />
               <Tab
-                label={dayjs().add(1, "days").format(formatTime)}
+                label={
+                  dayjs(dayjs().format(format)).isBetween(
+                    `${dayjs().format("YYYY-MM-DD")} 00:00`,
+                    `${dayjs().format("YYYY-MM-DD")} 05:00`
+                  )
+                    ? dayjs().subtract(1, "days").format(formatTime)
+                    : dayjs().format(formatTime)
+                }
+                {...a11yProps(0)}
+              />
+              <Tab
+                label={
+                  dayjs(dayjs().format(format)).isBetween(
+                    `${dayjs().format("YYYY-MM-DD")} 00:00`,
+                    `${dayjs().format("YYYY-MM-DD")} 05:00`
+                  )
+                    ? dayjs().format(formatTime)
+                    : dayjs().add(1, "days").format(formatTime)
+                }
                 {...a11yProps(1)}
               />
               <Tab label="À faire" {...a11yProps(2)} />
