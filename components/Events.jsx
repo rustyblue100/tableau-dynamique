@@ -78,9 +78,11 @@ export default function Events({
                 <TableHeadRow tabIndexValue={value} type="event" />
                 <TableBody>
                   {events &&
-                    events.map((f, i) => {
-                      return <Event key={f.id} event={f} index={i} />;
-                    })}
+                    events
+                      /*         .sort((a, b) => (a.Date > b.Date ? 1 : -1)) */
+                      .map((f, i) => {
+                        return <Event key={f.id} event={f} index={i} />;
+                      })}
                 </TableBody>
               </Table>
             </TableContainer>

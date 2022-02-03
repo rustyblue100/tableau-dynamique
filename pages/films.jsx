@@ -6,7 +6,6 @@ import { usePageVisibility } from "react-page-visibility";
 import { useNavigatorOnLine } from "../utils/useOnlineStatus";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import "dayjs/locale/fr";
-
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 
@@ -22,6 +21,8 @@ const Films = () => {
 
   const isVisible = usePageVisibility();
   const isOnline = useNavigatorOnLine();
+
+  dayjs.locale("fr");
 
   useEffect(() => {
     // Enable pusher logging - don't include this in production
@@ -50,7 +51,7 @@ const Films = () => {
     });
 
     base("Films")
-      .select({ /* maxRecords: 10,  */ view: "Testday" })
+      .select({ /* maxRecords: 10,  */ view: "mapping_de_nuit" })
       .all()
       .then((records) => {
         setFilms(records);
@@ -134,7 +135,7 @@ const Films = () => {
         dayjs.extend(isBetween);
         dayjs.extend(customParseFormat);
         const format = "YYYY-MM-DD HH:mm:ss";
-        const data = dayjs(d.fields.Date_et_Heure)
+        const data = dayjs(d.fields["Date et Heure"])
           .add(1, "seconds")
           .format(format);
         const yesterday = dayjs().subtract(1, "days").format("YYYY-MM-DD");
@@ -146,7 +147,7 @@ const Films = () => {
           `${dayjs().format("YYYY-MM-DD")} 05:00`
         )
           ? dayjs(data).isBetween(nightStart, nightEnd)
-          : dayjs(d.fields.Date_et_Heure).format("YYYY-MM-DD") ===
+          : dayjs(d.fields["Date et Heure"]).format("YYYY-MM-DD") ===
               dayjs().format("YYYY-MM-DD");
       })
     );

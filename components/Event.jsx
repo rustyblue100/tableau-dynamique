@@ -4,7 +4,9 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
-import moment from "moment";
+import "dayjs/locale/fr";
+import dayjs from "dayjs";
+
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import ReactMarkdown from "react-markdown";
@@ -55,15 +57,15 @@ const StyledTableRow = styled(TableRow)(({ theme, status }) => ({
 const Event = (props) => {
   const {
     Nom,
-    Date_et_Heure,
+    ["Date et Heure"]: Date_et_Heure,
     Départ,
     Ready,
     Notes,
-    Nb_de_personnes,
+    ["Nb. de personnes"]: Nb_de_personnes,
     Pains,
     Vans,
     Serveurs,
-    Arrivé_service,
+    ["Arrivé service"]: Arrivé_service,
     Allergies,
     prenom_regisseurs,
     nom_regisseurs,
@@ -193,7 +195,7 @@ const Event = (props) => {
           className={`cell-repas-${index}`}
           align="center"
         >
-          {moment(Date_et_Heure).format(formatTime)}
+          {dayjs(Date_et_Heure).format(formatTime)}
         </StyledTableCell>
 
         <StyledTableCell

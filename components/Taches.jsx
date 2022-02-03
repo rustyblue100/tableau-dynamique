@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import moment from "moment";
-import "moment/locale/fr"; // without this line it didn't work
+import "dayjs/locale/fr";
+import dayjs from "dayjs";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -29,13 +29,14 @@ const AFaire = ({ afaire }) => {
 
   const afaireGroup = afaire && Object.values(group);
 
+  dayjs.locale("fr");
+
   var menu =
     afaireGroup &&
     afaireGroup
       /*       .sort((a, b) => (a > b ? 1 : -1)) */
       .map((t, i) => {
-        const formatDate = moment(t[0].fields.Date).format("dddd D MMM");
-
+        const formatDate = dayjs(t[0].fields.Date).format("dddd D MMM");
         return formatDate;
       });
 
@@ -96,9 +97,7 @@ const AFaire = ({ afaire }) => {
                         sx={{ p: 0 }}
                         titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
                         title="Plats Frais"
-                        subheader={moment(t[0].fields.Date).format(
-                          "dddd D MMM"
-                        )}
+                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
                       />
                       <TableContainer>
                         <Table aria-label="simple table">
@@ -145,9 +144,7 @@ const AFaire = ({ afaire }) => {
                         sx={{ p: 0 }}
                         titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
                         title="Plats Congelés"
-                        subheader={moment(t[0].fields.Date).format(
-                          "dddd D MMM"
-                        )}
+                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
                       />
                       <TableContainer>
                         <Table aria-label="simple table">

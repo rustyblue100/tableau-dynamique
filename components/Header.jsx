@@ -1,32 +1,15 @@
-import SquareIcon from "@mui/icons-material/Square";
-import LogoutIcon from "@mui/icons-material/Logout";
-import {
-  Alert,
-  Box,
-  Grid,
-  List,
-  ListItemButton,
-  ListItemText,
-  Paper,
-  Typography,
-  Button,
-  Divider,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { Alert, Box, Grid, Paper, Typography, Tabs, Tab } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import axios from "axios";
-import moment from "moment";
-import { useEffect, useState } from "react";
-import Marquee from "react-fast-marquee";
-import MeteoCard from "./MeteoCard/MeteoCard";
+import "dayjs/locale/fr";
+import dayjs from "dayjs";
+import { useState } from "react";
 import { useNavigatorOnLine } from "../utils/useOnlineStatus";
-import { logout } from "../utils/firebase";
-import router from "next/router";
 
 const Header = ({ message, auth, value, setValue, setTabIndex }) => {
   const [weatherData, setWeatherData] = useState("");
   const formatTime = "ddd DD MMM";
+
+  dayjs.locale("fr");
 
   const isOnline = useNavigatorOnLine();
 
@@ -115,9 +98,9 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label={moment().format(formatTime)} {...a11yProps(0)} />
+              <Tab label={dayjs().format(formatTime)} {...a11yProps(0)} />
               <Tab
-                label={moment().add(1, "days").format(formatTime)}
+                label={dayjs().add(1, "days").format(formatTime)}
                 {...a11yProps(1)}
               />
               <Tab label="À faire" {...a11yProps(2)} />
