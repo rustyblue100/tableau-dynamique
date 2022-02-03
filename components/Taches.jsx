@@ -88,7 +88,7 @@ const AFaire = ({ afaire }) => {
                   <Card
                     elevation={0}
                     sx={{
-                      minWidth: { sm: 300, lg: 600 },
+                      minWidth: { sm: 400, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >
@@ -135,7 +135,7 @@ const AFaire = ({ afaire }) => {
                   <Card
                     elevation={0}
                     sx={{
-                      minWidth: { sm: 300, lg: 600 },
+                      minWidth: { sm: 400, lg: 600 },
                       maxWidth: { xs: 500, lg: 400, xl: 3000 },
                     }}
                   >

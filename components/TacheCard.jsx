@@ -15,7 +15,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 12,
+    fontSize: 10,
 
     [theme.breakpoints.up("lg")]: {
       fontSize: 16,
@@ -40,7 +40,9 @@ const TacheCard = ({ info }) => {
     <StyledTableRow>
       <StyledTableCell align="left">{Items}</StyledTableCell>
       <StyledTableCell align="right">{Quantités}</StyledTableCell>
-      <StyledTableCell align="right">{Notes}</StyledTableCell>
+      <StyledTableCell style={{ fontSize: 6, maxWidth: 100 }} align="right">
+        {Notes}
+      </StyledTableCell>
     </StyledTableRow>
   );
 };
