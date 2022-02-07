@@ -14,50 +14,50 @@ function typeMod(type) {
   }
 }
 
-const StyledTableCell = styled(TableCell)(({ theme, tabindex, type }) => ({
+const StyledTableCell = styled(TableCell)(({ theme, tabIndex, type }) => ({
   [`&.${tableCellClasses.head}`]: {
     padding: "4px 8px 4px 8px",
 
     backgroundColor:
-      tabindex === 0
+      tabIndex === 0
         ? theme.palette.common.black
-        : tabindex === 1
+        : tabIndex === 1
         ? "#e7ae2d"
-        : tabindex === 2
+        : tabIndex === 2
         ? typeMod(type)
         : "",
 
     borderLeft: `1px solid ${
-      tabindex === 0
+      tabIndex === 0
         ? theme.palette.common.black
-        : tabindex === 1
+        : tabIndex === 1
         ? "#e7ae2d"
-        : tabindex === 2
+        : tabIndex === 2
         ? typeMod(type)
         : ""
     }`,
 
     borderBottom: `1px solid ${
-      tabindex === 0
+      tabIndex === 0
         ? theme.palette.common.black
-        : tabindex === 1
+        : tabIndex === 1
         ? "#e7ae2d"
-        : tabindex === 2
+        : tabIndex === 2
         ? typeMod(type)
         : ""
     }`,
 
     borderRight: `1px solid ${
-      tabindex === 0
+      tabIndex === 0
         ? theme.palette.common.black
-        : tabindex === 1
+        : tabIndex === 1
         ? "#e7ae2d"
-        : tabindex === 2
+        : tabIndex === 2
         ? typeMod(type)
         : ""
     }`,
     color:
-      tabindex === 0 ? theme.palette.common.white : theme.palette.common.black,
+      tabIndex === 0 ? theme.palette.common.white : theme.palette.common.black,
     fontSize: 14,
     lineHeight: 1,
     [theme.breakpoints.up("lg")]: {
@@ -77,40 +77,40 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
           sx={{
             width: 15,
           }}
-          tabindex={tabIndexValue}
+          tabIndex={tabIndexValue}
           type="event"
           align="center"
         ></StyledTableCell> */}
-        <StyledTableCell tabindex={tabIndexValue} type="event">
+        <StyledTableCell tabIndex={tabIndexValue} type="event">
           Films
         </StyledTableCell>
         <StyledTableCell
-          tabindex={tabIndexValue}
+          tabIndex={tabIndexValue}
           type="event"
           align="center"
           style={{ whiteSpace: "nowrap" }}
         >
           Nb. de pers.
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Pain
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Van
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Service
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Départ
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Ready
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">
           Lunch
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="event" align="right">
+        <StyledTableCell tabIndex={tabIndexValue} type="event" align="right">
           Notes
         </StyledTableCell>
       </TableRow>
@@ -118,13 +118,13 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
   ) : type === "pf" ? (
     <TableHead type="pf">
       <TableRow>
-        <StyledTableCell tabindex={tabIndexValue} type="pf">
+        <StyledTableCell tabIndex={tabIndexValue} type="pf">
           Plats Frais
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="pf" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="pf" align="center">
           Quantités
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="pf" align="right">
+        <StyledTableCell tabIndex={tabIndexValue} type="pf" align="right">
           Notes
         </StyledTableCell>
       </TableRow>
@@ -132,13 +132,13 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
   ) : (
     <TableHead type="pc">
       <TableRow>
-        <StyledTableCell tabindex={tabIndexValue} type="pc">
+        <StyledTableCell tabIndex={tabIndexValue} type="pc">
           Plats Congelés
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="pc" align="center">
+        <StyledTableCell tabIndex={tabIndexValue} type="pc" align="center">
           Quantités
         </StyledTableCell>
-        <StyledTableCell tabindex={tabIndexValue} type="pc" align="right">
+        <StyledTableCell tabIndex={tabIndexValue} type="pc" align="right">
           Notes
         </StyledTableCell>
       </TableRow>

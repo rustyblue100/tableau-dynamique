@@ -26,7 +26,7 @@ const Films = () => {
 
   useEffect(() => {
     // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+    Pusher.logToConsole = false;
 
     const pusher = new Pusher(process.env.NEXT_PUBLIC_PUSHERKEY, {
       cluster: "us2",

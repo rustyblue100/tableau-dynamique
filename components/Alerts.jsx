@@ -9,8 +9,6 @@ export default function Alerts() {
     message: "",
   });
 
-  console.log(notificationDownPageRow);
-
   // Row highlight alert
   useEffect(() => {
     const table = document.querySelector(".MuiTable-root");
