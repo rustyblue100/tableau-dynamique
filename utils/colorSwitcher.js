@@ -1,6 +1,6 @@
 export default function colorSwitch(status) {
   switch (true) {
-    case status === "Non-confirmé":
+    case status === "Réservation":
       return "#ffffff";
     case status === "Confirmé":
       return "#23CB59";

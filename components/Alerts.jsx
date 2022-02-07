@@ -86,8 +86,8 @@ export default function Alerts() {
             }
 
             if (
-              cellPriority === "Non-confirmé" ||
-              cellPriority2 === "Non-confirmé"
+              cellPriority === "Réservation" ||
+              cellPriority2 === "Réservation"
             ) {
               cell.classList.add("alerted-red");
             }
