@@ -90,6 +90,14 @@ const TableHeadRow = ({ tabIndexValue, type }) => {
           align="center"
           style={{ whiteSpace: "nowrap" }}
         >
+          Type
+        </StyledTableCell>
+        <StyledTableCell
+          tabIndex={tabIndexValue}
+          type="event"
+          align="center"
+          style={{ whiteSpace: "nowrap" }}
+        >
           Nb. de pers.
         </StyledTableCell>
         <StyledTableCell tabIndex={tabIndexValue} type="event" align="center">

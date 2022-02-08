@@ -74,6 +74,7 @@ const Event = (props) => {
     Status,
     Détails,
     Adresse,
+    Type,
   } = props.event.fields;
 
   const index = props.index;
@@ -136,6 +137,15 @@ const Event = (props) => {
             Tél: {tel_regisseur && tel_regisseur} <br />
             {Adresse}
           </Typography>
+        </StyledTableCell>
+        <StyledTableCell
+          status={Status}
+          data-priority={Status}
+          className={`cell-type-${index}`}
+          align="center"
+          style={{ fontWeight: 400 }}
+        >
+          {Type}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
