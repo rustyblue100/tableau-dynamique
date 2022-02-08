@@ -50,7 +50,7 @@ const Films = () => {
       apiKey: process.env.NEXT_PUBLIC_APIKEY,
     });
 
-    base("Calendrier")
+    base("test")
       .select({ /* maxRecords: 10,  */ view: "mapping_de_nuit" })
       .all()
       .then((records) => {
@@ -61,7 +61,7 @@ const Films = () => {
         console.log("error: " + err);
       });
 
-    base("Calendrier")
+    base("test")
       .select({ /* maxRecords: 10,  */ view: "Demain" })
       .all()
       .then((records) => {

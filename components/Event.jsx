@@ -97,7 +97,7 @@ const Event = (props) => {
     }
   };
 
-  Alerts();
+  /*   Alerts(); */
 
   function truncate(string, limit) {
     return string.length > limit ? `${string.substr(0, limit)}...` : string;
@@ -105,6 +105,7 @@ const Event = (props) => {
 
   return (
     <>
+      <Alerts />
       <StyledTableRow
         status={Status}
         style={{ backgroundColor: Status === "En attente" && "#fff70038" }}

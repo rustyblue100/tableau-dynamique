@@ -1,13 +1,25 @@
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
+import { Snackbar, Button } from "@mui/material";
 
 export default function Alerts() {
   const [playBellAlert] = useSound("/bell.wav", { volume: 0.3 });
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    setOpen(false);
+  };
+
   const [notificationDownPageRow, setNotificationDownPageRow] = useState({
-    status: false,
     message: "",
   });
+
+  console.log(notificationDownPageRow);
 
   // Row highlight alert
   useEffect(() => {
@@ -92,9 +104,10 @@ export default function Alerts() {
               cell.classList.add("alerted-red");
             }
 
-            if (parseInt(cell.classList[4].split("-")[2]) >= 4) {
+            if (parseInt(cell.classList[4].split("-")[2]) >= 3) {
+              console.log(cell);
+              setOpen(true);
               setNotificationDownPageRow({
-                status: true,
                 message: `Modification ${
                   parseInt(cell.classList[4].split("-")[2]) + 1
                 }ième film`,
@@ -143,5 +156,30 @@ export default function Alerts() {
         characterDataOldValue: false,
       });
   }, [playBellAlert]);
-  return "";
+
+  const action = (
+    <>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        RETIRER
+      </Button>
+    </>
+  );
+  return (
+    <Snackbar
+      style={{ top: 10 }}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      open={open}
+      autoHideDuration={60000}
+      onClose={handleClose}
+      message={notificationDownPageRow.message}
+      action={action}
+      ContentProps={{
+        sx: {
+          opacity: 0.5,
+          background: "#288feb",
+          padding: "4px 8px",
+        },
+      }}
+    />
+  );
 }
