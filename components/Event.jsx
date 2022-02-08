@@ -121,14 +121,18 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-event-${index}`}
           align="left"
-          sx={{ fontWeight: 500, width: { xs: 186, lg: 340 } }}
+          sx={{
+            fontWeight: 500,
+            lineHeight: 1.25 /* width: { xs: 186, lg: 340 } */,
+          }}
         >
-          {truncate(Nom, 15)}
+          {truncate(Nom, 10)}
 
           <Typography
             data-priority={Status}
-            pt={0}
+            pt={1}
             mb={0}
+            lineHeight={"15px"}
             variant="regie"
             paragraph="p"
           >
