@@ -151,9 +151,9 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               justifyContent="center"
               p={"8px"}
               sx={{
-                fontSize: { xs: 14, lg: 22 },
+                fontSize: { xs: 12, lg: 22 },
                 borderRadius: 1,
-                padding: 1.5,
+                padding: "10px 5px",
               }}
             >
               {message[0].fields.Message}
