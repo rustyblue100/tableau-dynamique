@@ -1,7 +1,8 @@
-import { Box, Divider, List, ListItem, ListItemText } from "@mui/material/";
-import Typography from "@mui/material/Typography";
+import { Divider, List, ListItemText } from "@mui/material/";
 import "dayjs/locale/fr";
 import { styled } from "@mui/material/styles";
+import "dayjs/locale/fr";
+import dayjs from "dayjs";
 
 const Item = styled(ListItemText)(({ theme }) => ({
   ".MuiListItemText-primary": {
@@ -16,12 +17,15 @@ const Item = styled(ListItemText)(({ theme }) => ({
 const Event = ({ event }) => {
   const {
     Nom,
+    ["Date et Heure"]: Date_et_Heure,
     ["Nb. de personnes"]: nbPers,
     Notes,
     ["Nb. de personnes"]: Nb_de_personnes,
     Status,
     Type,
   } = event.fields;
+
+  const formatTime = "HH:mm";
 
   return (
     <>
@@ -33,7 +37,12 @@ const Event = ({ event }) => {
             fontWeight: 700,
           }}
         />
-        <Item primary={nbPers + " pers."} />
+        <Item
+          primary={
+            nbPers &&
+            nbPers + " pers. " + dayjs(Date_et_Heure).format(formatTime)
+          }
+        />
         <Item primary={Type} />
       </List>
       <Divider
