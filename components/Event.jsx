@@ -139,7 +139,7 @@ const Event = (props) => {
             Régie: {prenom_regisseurs && prenom_regisseurs}{" "}
             {nom_regisseurs && nom_regisseurs} <br />
             Tél: {tel_regisseur && tel_regisseur} <br />
-            {Adresse}
+            {truncate(Adresse.toString(), 34)}
           </Typography>
         </StyledTableCell>
         <StyledTableCell
