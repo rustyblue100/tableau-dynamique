@@ -1,5 +1,17 @@
-import { Box, Divider } from "@mui/material/";
+import { Box, Divider, List, ListItem, ListItemText } from "@mui/material/";
+import Typography from "@mui/material/Typography";
 import "dayjs/locale/fr";
+import { styled } from "@mui/material/styles";
+
+const Item = styled(ListItemText)(({ theme }) => ({
+  ".MuiListItemText-primary": {
+    fontSize: 10,
+    lineHeight: 1.5,
+    [theme.breakpoints.up("lg")]: {
+      fontSize: 18,
+    },
+  },
+}));
 
 const Event = ({ event }) => {
   const {
@@ -13,14 +25,18 @@ const Event = ({ event }) => {
 
   return (
     <>
-      <Box pb={3}>
-        <h3>{Nom}</h3>
-        {nbPers} personnes
-        <br />
-        {Type}
-      </Box>
+      <List mt={2} pb={3} dense={true}>
+        <Item
+          sx={{ textTransform: "uppercase" }}
+          primary={Nom}
+          primaryTypographyProps={{
+            fontWeight: 700,
+          }}
+        />
+        <Item primary={nbPers + " pers."} />
+        <Item primary={Type} />
+      </List>
       <Divider
-        /*     light={true} */
         sx={{
           "&.MuiDivider-root": {
             border: `1px solid white`,

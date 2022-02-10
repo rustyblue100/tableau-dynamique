@@ -178,7 +178,7 @@ export default function Events({
         </Box>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Grid container justifyContent="space-around" mt={5}>
+        <Grid container justifyContent="space-around" mt={2}>
           {semaineGroup &&
             semaineGroup.map((jour, i) => {
               return (
@@ -193,7 +193,11 @@ export default function Events({
                   }}
                 >
                   <div>
-                    <Typography variant="h4">
+                    <Typography
+                      /*      sx={{ fontSize: 180 }} */
+                      variant="h6"
+                      gutterBottom={false}
+                    >
                       {jour &&
                         dayjs(jour[0].fields["Date et Heure"]).format("ddd D")}
                     </Typography>
