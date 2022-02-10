@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 const Item = styled(ListItemText)(({ theme }) => ({
   ".MuiListItemText-primary": {
     fontSize: 10,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     [theme.breakpoints.up("lg")]: {
       fontSize: 18,
     },
@@ -25,9 +25,9 @@ const Event = ({ event }) => {
 
   return (
     <>
-      <List mt={2} pb={3} dense={true}>
+      <List pb={3}>
         <Item
-          sx={{ textTransform: "uppercase" }}
+          sx={{ textTransform: "capitalize", mt: "-1px" }}
           primary={Nom}
           primaryTypographyProps={{
             fontWeight: 700,

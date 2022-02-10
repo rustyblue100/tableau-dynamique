@@ -74,12 +74,23 @@ const theme = createTheme({
 
       ["@media screen and (max-width: 1920px)"]: {
         fontSize: 14,
+        padding: 0,
       },
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 9,
+        fontSize: 11,
       },
     },
-    message: { fontSize: 12 },
+    message: { fontSize: 11 },
+    serveurs: {
+      fontSize: 9,
+      fontWeight: 400,
+      ["@media screen and (max-width: 1920px)"]: {
+        fontSize: 16,
+      },
+      ["@media screen and (max-width: 1200px)"]: {
+        fontSize: 12,
+      },
+    },
     regie: {
       fontSize: 9,
       fontWeight: 400,

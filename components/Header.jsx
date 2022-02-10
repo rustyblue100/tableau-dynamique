@@ -90,7 +90,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
         alignItems="center"
         sx={{ p: 0 }}
       >
-        <Grid container item md={3} lg={4}>
+        <Grid item md={5} lg={4}>
           {/*       {weather()} */}
 
           <Item elevation={0}>
@@ -133,7 +133,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
 
         <Grid
           item
-          md={7}
+          md={4}
           lg={4}
           style={{
             display: "flex",
@@ -150,14 +150,18 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               display="flex"
               justifyContent="center"
               p={"8px"}
-              sx={{ fontSize: { xs: 14, lg: 22 } }}
+              sx={{
+                fontSize: { xs: 14, lg: 22 },
+                borderRadius: 1,
+                padding: 1.5,
+              }}
             >
               {message[0].fields.Message}
             </Typography>
           )}
         </Grid>
 
-        <Grid item md={2} lg={3}>
+        <Grid item md={3} lg={3}>
           <Item
             elevation={0}
             sx={{
@@ -192,7 +196,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
             >
               {!isOnline && (
                 <Box sx={{}}>
-                  <Alert variant="filled" severity="warning">
+                  <Alert variant="filled" severity="error">
                     Offline
                   </Alert>
                 </Box>

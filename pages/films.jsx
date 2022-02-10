@@ -73,7 +73,7 @@ const Films = () => {
         console.log("error: " + err);
       });
 
-    base("test")
+    base("Calendrier")
       .select({ /* maxRecords: 10,  */ view: "Semaine" })
       .all()
       .then((records) => {

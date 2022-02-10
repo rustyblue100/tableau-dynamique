@@ -192,9 +192,13 @@ export default function Events({
                     backgroundColor: "rgb(244, 244, 244)",
                   }}
                 >
-                  <div>
+                  <Box>
                     <Typography
-                      /*      sx={{ fontSize: 180 }} */
+                      sx={{
+                        fontSize: { lg: 28 },
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                      }}
                       variant="h6"
                       gutterBottom={false}
                     >
@@ -205,7 +209,7 @@ export default function Events({
                       jour.map((d) => (
                         <Semaine key={jour.id} event={d} index={i} />
                       ))}
-                  </div>
+                  </Box>
                 </Grid>
               );
             })}

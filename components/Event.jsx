@@ -72,7 +72,7 @@ const Event = (props) => {
     tel_regisseur,
     adresse_regisseur,
     Status,
-    Détails,
+    ["Détails de commande"]: Détails,
     Adresse,
     Type,
   } = props.event.fields;
@@ -181,7 +181,7 @@ const Event = (props) => {
           className={`cell-serveurs-${index}`}
           align="center"
           data-priority={Status}
-          sx={{ typography: "body1" }}
+          sx={{ typography: "serveurs" }}
         >
           {Status !== "Réservation" &&
             Serveurs &&
