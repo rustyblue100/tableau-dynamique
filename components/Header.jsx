@@ -90,7 +90,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
         alignItems="center"
         sx={{ p: 0 }}
       >
-        <Grid container item md={2} lg={4}>
+        <Grid container item md={3} lg={4}>
           {/*       {weather()} */}
 
           <Item elevation={0}>
@@ -126,13 +126,14 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
                 {...a11yProps(1)}
               />
               <Tab label="À faire" {...a11yProps(2)} />
+              <Tab label="Semaine" {...a11yProps(3)} />
             </Tabs>
           </Item>
         </Grid>
 
         <Grid
           item
-          md={8}
+          md={7}
           lg={4}
           style={{
             display: "flex",
@@ -148,14 +149,15 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               textAlign="center"
               display="flex"
               justifyContent="center"
-              p={"5px"}
+              p={"8px"}
+              sx={{ fontSize: { xs: 14, lg: 22 } }}
             >
               {message[0].fields.Message}
             </Typography>
           )}
         </Grid>
 
-        <Grid item md={2} lg={4}>
+        <Grid item md={2} lg={3}>
           <Item
             elevation={0}
             sx={{
@@ -178,7 +180,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
             <Box sx={{ float: "right", width: { sx: "48px", lg: "100px" } }}>
               <img
                 src="/qr-mobile.png"
-                style={{ maxWidth: "100%", minWidth: "48px", maxWidth: "48px" }}
+                style={{ minWidth: "48px", maxWidth: "48px" }}
               />
             </Box>
 

@@ -12,6 +12,7 @@ import isBetween from "dayjs/plugin/isBetween";
 const Films = () => {
   const [films, setFilms] = useState();
   const [filmsDemain, setFilmsDemain] = useState();
+  const [semaine, setSemaine] = useState();
   const [afaire, setAfaire] = useState();
   const [message, setMessage] = useState();
   const [reload, setReload] = useState(false);
@@ -66,6 +67,17 @@ const Films = () => {
       .all()
       .then((records) => {
         setFilmsDemain(records);
+      })
+      .catch((err) => {
+        // Handle error.
+        console.log("error: " + err);
+      });
+
+    base("test")
+      .select({ /* maxRecords: 10,  */ view: "Semaine" })
+      .all()
+      .then((records) => {
+        setSemaine(records);
       })
       .catch((err) => {
         // Handle error.
@@ -181,6 +193,7 @@ const Films = () => {
         events={filmsModTimezoneAuj()}
         message={message}
         eventsDemain={filmsModTimezoneDemain()}
+        eventsSemaine={semaine}
         afaire={afaire}
         setTabIndex={setTabIndex}
       />
