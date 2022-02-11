@@ -142,7 +142,7 @@ a {
 
 #simple-tabpanel-2 .swiper-pagination-bullet-active {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.87);
-
-  background-color: #cd9393 !important;
+  font-weight: 500;
+  color: black;
+  background-color: #00000012 !important;
 }
