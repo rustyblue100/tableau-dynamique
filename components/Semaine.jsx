@@ -19,6 +19,7 @@ const Event = ({ event }) => {
     ["Date et Heure"]: Date_et_Heure,
     ["Nb. de personnes"]: nbPers,
     Type,
+    Allergies,
   } = event.fields;
 
   const formatTime = "HH:mm";
@@ -40,6 +41,12 @@ const Event = ({ event }) => {
           }
         />
         <Item primary={Type} />
+        <Item
+          primaryTypographyProps={{
+            color: "error.main",
+          }}
+          primary={Allergies && Allergies}
+        />
       </List>
       <Divider
         sx={{

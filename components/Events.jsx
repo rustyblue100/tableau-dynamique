@@ -179,7 +179,7 @@ export default function Events({
                     backgroundColor: "rgb(244, 244, 244)",
                   }}
                 >
-                  <Box>
+                  <Box mt={-2.3}>
                     <Typography
                       sx={{
                         fontSize: { lg: 28 },
