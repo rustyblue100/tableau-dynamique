@@ -51,7 +51,7 @@ const Films = () => {
       apiKey: process.env.NEXT_PUBLIC_APIKEY,
     });
 
-    base("Calendrier")
+    base("test")
       .select({ /* maxRecords: 10,  */ view: "mapping_de_nuit" })
       .all()
       .then((records) => {

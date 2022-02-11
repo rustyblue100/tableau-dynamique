@@ -1,8 +1,7 @@
 import { Divider, List, ListItemText } from "@mui/material/";
-import "dayjs/locale/fr";
 import { styled } from "@mui/material/styles";
-import "dayjs/locale/fr";
 import dayjs from "dayjs";
+import "dayjs/locale/fr";
 
 const Item = styled(ListItemText)(({ theme }) => ({
   ".MuiListItemText-primary": {
@@ -19,9 +18,6 @@ const Event = ({ event }) => {
     Nom,
     ["Date et Heure"]: Date_et_Heure,
     ["Nb. de personnes"]: nbPers,
-    Notes,
-    ["Nb. de personnes"]: Nb_de_personnes,
-    Status,
     Type,
   } = event.fields;
 

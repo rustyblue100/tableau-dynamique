@@ -74,10 +74,9 @@ const theme = createTheme({
 
       ["@media screen and (max-width: 1920px)"]: {
         fontSize: 14,
-        padding: 0,
       },
       ["@media screen and (max-width: 1200px)"]: {
-        fontSize: 11,
+        fontSize: 10,
       },
     },
     message: { fontSize: 11 },

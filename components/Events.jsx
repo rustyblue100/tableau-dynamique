@@ -1,25 +1,23 @@
 import {
-  Container,
   Box,
   CircularProgress,
+  Container,
   Grid,
   Table,
   TableBody,
   TableContainer,
   Typography,
-  Divider,
 } from "@mui/material";
+import dayjs from "dayjs";
+import "dayjs/locale/fr";
 import { useState } from "react";
-import Header from "./Header";
 import { useViewport } from "../utils/hooks";
 import Event from "./Event";
+import Header from "./Header";
 import Semaine from "./Semaine";
 import TableHeadRow from "./TableHeadRow";
 import TableSlide from "./TableSlide";
 import Taches from "./Taches";
-
-import "dayjs/locale/fr";
-import dayjs from "dayjs";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,19 +64,6 @@ export default function Events({
 
   const semaineGroup = eventsSemaine && Object.values(group);
 
-  var menu =
-    semaineGroup &&
-    semaineGroup
-      /*       .sort((a, b) => (a > b ? 1 : -1)) */
-      .map((t, i) => {
-        const formatDate = dayjs(t[0].fields["Date et Heure"]).format(
-          "dddd D MMM"
-        );
-        return formatDate;
-      });
-
-  console.log(semaineGroup);
-
   return (
     <Container
       sx={{
@@ -103,7 +88,7 @@ export default function Events({
           events.length < 30 ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 2 }}
+                sx={{ minWidth: 700, mt: 1 }}
                 aria-label="customized table"
               >
                 <TableHeadRow tabIndexValue={value} type="event" />
@@ -139,7 +124,7 @@ export default function Events({
           eventsDemain.length < 30 ? (
             <TableContainer>
               <Table
-                sx={{ minWidth: 700, mt: 2 }}
+                sx={{ minWidth: 700, mt: 1 }}
                 aria-label="customized table"
               >
                 <TableHeadRow
@@ -183,9 +168,11 @@ export default function Events({
             semaineGroup.map((jour, i) => {
               return (
                 <Grid
+                  key={i}
                   item
                   sx={{
-                    border: "1px solid white",
+                    borderLeft: "1px solid white",
+                    borderRight: "1px solid white",
                     flex: 1,
                     lineHeight: "1.5",
                     padding: 1,
@@ -197,7 +184,7 @@ export default function Events({
                       sx={{
                         fontSize: { lg: 28 },
                         fontWeight: 400,
-                        textTransform: "uppercase",
+                        textTransform: "lowercase",
                       }}
                       variant="h6"
                       gutterBottom={false}

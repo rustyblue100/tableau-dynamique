@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import "dayjs/locale/fr";
 import dayjs from "dayjs";
+import "dayjs/locale/fr";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -35,7 +35,7 @@ const AFaire = ({ afaire }) => {
     afaireGroup &&
     afaireGroup
       /*       .sort((a, b) => (a > b ? 1 : -1)) */
-      .map((t, i) => {
+      .map((t) => {
         const formatDate = dayjs(t[0].fields.Date).format("dddd D MMM");
         return formatDate;
       });
@@ -94,10 +94,10 @@ const AFaire = ({ afaire }) => {
                   >
                     <CardContent>
                       <CardHeader
-                        sx={{ p: 0 }}
-                        titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
+                        sx={{ p: 1, backgroundColor: "#7be17691" }}
+                        titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
                         title="Plats Frais"
-                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
+                        /*    subheader={dayjs(t[0].fields.Date).format("dddd D MMM")} */
                       />
                       <TableContainer>
                         <Table aria-label="simple table">
@@ -141,10 +141,10 @@ const AFaire = ({ afaire }) => {
                   >
                     <CardContent>
                       <CardHeader
-                        sx={{ p: 0 }}
-                        titleTypographyProps={{ fontSize: { xs: 20, lg: 28 } }}
+                        sx={{ p: 1, backgroundColor: "#71c9ff7a" }}
+                        titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
                         title="Plats Congelés"
-                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
+                        /*    subheader={dayjs(t[0].fields.Date).format("dddd D MMM")} */
                       />
                       <TableContainer>
                         <Table aria-label="simple table">

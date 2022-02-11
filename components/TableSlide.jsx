@@ -68,7 +68,6 @@ const TableSlide = ({ slideData, events, eventsDemain, tabIndexValue }) => {
               <TableBody>
                 {
                   // Activate or not second page view
-
                   evensData &&
                     evensData.slice(slideData[0], slideData[1]).map((f, i) => {
                       return (

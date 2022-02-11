@@ -1,5 +1,6 @@
 html,
 body {
+  background: rgb(244, 244, 244);
   padding: 0;
   margin: 0;
   font-family: Helvetica Neue, Inter, Neue Calibri, -apple-system,
@@ -102,9 +103,9 @@ a {
 
 #simple-tabpanel-2 .swiper-pagination {
   position: relative !important;
-  padding: 0.3rem 0 !important;
-  margin-top: 16px;
-  margin-bottom: 20px;
+  padding: 0.4rem 0 !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
@@ -132,12 +133,16 @@ a {
   width: unset !important;
   height: unset !important;
   border-radius: 0;
-  padding: 6px;
-  background-color: #0288d1 !important;
-  color: #fff;
-  opacity: 0.4;
+  padding: 10px 10px;
+  background-color: white !important;
+  /*   border: 1px solid black; */
+  color: black;
+  opacity: 0.6;
 }
 
 #simple-tabpanel-2 .swiper-pagination-bullet-active {
   opacity: 1;
+  color: rgba(0, 0, 0, 0.87);
+
+  background-color: #cd9393 !important;
 }

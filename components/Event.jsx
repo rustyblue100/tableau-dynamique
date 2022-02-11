@@ -4,14 +4,13 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
-import "dayjs/locale/fr";
 import dayjs from "dayjs";
-
+import "dayjs/locale/fr";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import ReactMarkdown from "react-markdown";
-import Alerts from "./Alerts";
 import colorSwitch from "../utils/colorSwitcher";
+import Alerts from "./Alerts";
 
 const StyledTableCell = styled(TableCell)(({ theme, status }) => ({
   color: "#222427",
@@ -70,7 +69,6 @@ const Event = (props) => {
     prenom_regisseurs,
     nom_regisseurs,
     tel_regisseur,
-    adresse_regisseur,
     Status,
     ["Détails de commande"]: Détails,
     Adresse,
@@ -239,7 +237,7 @@ const Event = (props) => {
           {Détails && (
             <Dialog onClose={handleClose} open={open}>
               <DialogContent dividers>
-                <Typography gutterBottom>
+                <Typography variant="regie" gutterBottom>
                   <ReactMarkdown>{Détails}</ReactMarkdown>
                 </Typography>
               </DialogContent>

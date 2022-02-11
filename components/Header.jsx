@@ -1,11 +1,21 @@
-import { Alert, Box, Grid, Paper, Typography, Tabs, Tab } from "@mui/material";
+import { Alert, Box, Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import "dayjs/locale/fr";
 import dayjs from "dayjs";
+import "dayjs/locale/fr";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import isBetween from "dayjs/plugin/isBetween";
 import { useState } from "react";
 import { useNavigatorOnLine } from "../utils/useOnlineStatus";
+
+const TabItem = styled(Tab)(({ theme }) => ({
+  minWidth: 50,
+  maxWidth: 72,
+
+  [theme.breakpoints.up("lg")]: {
+    minWidth: 50,
+    maxWidth: 120,
+  },
+}));
 
 const Header = ({ message, auth, value, setValue, setTabIndex }) => {
   const [weatherData, setWeatherData] = useState("");
@@ -90,51 +100,46 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
         alignItems="center"
         sx={{ p: 0 }}
       >
-        <Grid item md={5} lg={4}>
-          {/*       {weather()} */}
-
-          <Item elevation={0}>
-            <Tabs
-              textColor="secondary"
-              indicatorColor="secondary"
-              variant="fullWidth"
-              orientation="horizontal"
-              value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
-            >
-              <Tab
-                label={
-                  dayjs(dayjs().format(format)).isBetween(
-                    `${dayjs().format("YYYY-MM-DD")} 00:00`,
-                    `${dayjs().format("YYYY-MM-DD")} 05:00`
-                  )
-                    ? dayjs().subtract(1, "days").format(formatTime)
-                    : dayjs().format(formatTime)
-                }
-                {...a11yProps(0)}
-              />
-              <Tab
-                label={
-                  dayjs(dayjs().format(format)).isBetween(
-                    `${dayjs().format("YYYY-MM-DD")} 00:00`,
-                    `${dayjs().format("YYYY-MM-DD")} 05:00`
-                  )
-                    ? dayjs().format(formatTime)
-                    : dayjs().add(1, "days").format(formatTime)
-                }
-                {...a11yProps(1)}
-              />
-              <Tab label="À faire" {...a11yProps(2)} />
-              <Tab label="Semaine" {...a11yProps(3)} />
-            </Tabs>
-          </Item>
+        <Grid item md={4}>
+          <Tabs
+            /*     sx={{ maxWidth: 200 }} */
+            textColor="secondary"
+            indicatorColor="secondary"
+            orientation="horizontal"
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <TabItem
+              label={
+                dayjs(dayjs().format(format)).isBetween(
+                  `${dayjs().format("YYYY-MM-DD")} 00:00`,
+                  `${dayjs().format("YYYY-MM-DD")} 05:00`
+                )
+                  ? dayjs().subtract(1, "days").format(formatTime)
+                  : dayjs().format(formatTime)
+              }
+              {...a11yProps(0)}
+            />
+            <TabItem
+              label={
+                dayjs(dayjs().format(format)).isBetween(
+                  `${dayjs().format("YYYY-MM-DD")} 00:00`,
+                  `${dayjs().format("YYYY-MM-DD")} 05:00`
+                )
+                  ? dayjs().format(formatTime)
+                  : dayjs().add(1, "days").format(formatTime)
+              }
+              {...a11yProps(1)}
+            />
+            <TabItem label="À faire" {...a11yProps(2)} />
+            <TabItem label="Semaine" {...a11yProps(3)} />
+          </Tabs>
         </Grid>
 
         <Grid
           item
           md={4}
-          lg={4}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -151,8 +156,8 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               justifyContent="center"
               p={"8px"}
               sx={{
-                fontSize: { xs: 12, lg: 22 },
-                borderRadius: 1,
+                fontSize: { xs: 12, lg: 18 },
+                /*      borderRadius: 1, */
                 padding: "10px 5px",
               }}
             >
@@ -161,7 +166,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
           )}
         </Grid>
 
-        <Grid item md={3} lg={3}>
+        <Grid item md={4}>
           <Item
             elevation={0}
             sx={{
