@@ -97,7 +97,10 @@ const AFaire = ({ afaire }) => {
                         sx={{ p: 1, backgroundColor: "#7be17691" }}
                         titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
                         title="Plats Frais"
-                        /*    subheader={dayjs(t[0].fields.Date).format("dddd D MMM")} */
+                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
+                        subheaderTypographyProps={{
+                          fontSize: { xs: 12, lg: 16 },
+                        }}
                       />
                       <TableContainer>
                         <Table aria-label="simple table">
@@ -143,8 +146,11 @@ const AFaire = ({ afaire }) => {
                       <CardHeader
                         sx={{ p: 1, backgroundColor: "#71c9ff7a" }}
                         titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
+                        subheaderTypographyProps={{
+                          fontSize: { xs: 12, lg: 16 },
+                        }}
                         title="Plats Congelés"
-                        /*    subheader={dayjs(t[0].fields.Date).format("dddd D MMM")} */
+                        subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
                       />
                       <TableContainer>
                         <Table aria-label="simple table">
