@@ -156,7 +156,7 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               justifyContent="center"
               p={"8px"}
               sx={{
-                fontSize: { xs: 12, lg: 18 },
+                fontSize: { xs: 11, lg: 18 },
                 /*      borderRadius: 1, */
                 padding: "10px 5px",
               }}
