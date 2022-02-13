@@ -124,7 +124,7 @@ const Event = (props) => {
             lineHeight: 1.25 /* width: { xs: 186, lg: 340 } */,
           }}
         >
-          {truncate(Nom, 10)}
+          {truncate(Nom, 14)}
 
           <Typography
             data-priority={Status}
