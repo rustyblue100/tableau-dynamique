@@ -121,8 +121,10 @@ const AFaire = ({ afaire }) => {
                             {t
                               .filter(
                                 (data) =>
+                                  data.fields.Type &&
                                   data.fields.Type.toString() ===
-                                    "Plats Frais" && data.fields.Publier
+                                    "Plats Frais" &&
+                                  data.fields.Publier
                               )
                               .map((f, i) => {
                                 return <TacheCard key={i} info={f.fields} />;
@@ -171,8 +173,10 @@ const AFaire = ({ afaire }) => {
                             {t
                               .filter(
                                 (data) =>
+                                  data.fields.Type &&
                                   data.fields.Type.toString() ===
-                                    "Plats Congelés" && data.fields.Publier
+                                    "Plats Congelés" &&
+                                  data.fields.Publier
                               )
                               .map((f, i) => {
                                 return <TacheCard key={i} info={f.fields} />;
