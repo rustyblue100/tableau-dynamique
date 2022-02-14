@@ -8,6 +8,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import "dayjs/locale/fr";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
+import Head from "next/head";
 
 const Films = () => {
   const [films, setFilms] = useState();
@@ -189,6 +190,10 @@ const Films = () => {
 
   return (
     <div>
+      <Head>
+        <title>Tableau | De Bons Petits Plats</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Events
         events={filmsModTimezoneAuj()}
         message={message}
