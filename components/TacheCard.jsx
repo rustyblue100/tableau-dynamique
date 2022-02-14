@@ -34,7 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const TacheCard = ({ info }) => {
-  const { Items, Quantités, Notes, Type, Prêt } = info;
+  const { Items, Quantités, Notes, Type, Prêt, Plats } = info;
 
   return (
     <StyledTableRow>
@@ -42,7 +42,7 @@ const TacheCard = ({ info }) => {
         sx={{ textDecoration: Prêt && "line-through" }}
         align="left"
       >
-        {Items}
+        {Plats}
       </StyledTableCell>
       <StyledTableCell
         sx={{ textDecoration: Prêt && "line-through" }}
