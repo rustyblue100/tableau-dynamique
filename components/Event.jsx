@@ -256,7 +256,7 @@ const Event = (props) => {
         >
           <Marquee
             style={{ color: "#D0342C", fontWeight: 500, border: "none" }}
-            speed={80}
+            speed={40}
             gradient={false}
             pauseOnClick={true}
             delay={delayMarquee(index)}
