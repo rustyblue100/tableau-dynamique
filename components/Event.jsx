@@ -219,7 +219,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-notes-${index}`}
           align="right"
-          sx={{ typography: "body1" /* , width: 200 */ }}
+          sx={{ typography: "body1", width: { xs: 112, lg: "unset" } }}
         >
           {Notes}
           <br></br>
