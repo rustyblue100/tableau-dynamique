@@ -186,11 +186,8 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               <br />
               <strong>1210@dbpp</strong>
             </Typography>
-            <Box sx={{ float: "right", width: { sx: "48px", lg: "100px" } }}>
-              <img
-                src="/qr-mobile.png"
-                style={{ minWidth: "48px", maxWidth: "48px" }}
-              />
+            <Box sx={{ float: "right", maxWidth: { xs: "48px", lg: "100px" } }}>
+              <img src="/qr-mobile.png" style={{ maxWidth: "100%" }} />
             </Box>
 
             <Box
