@@ -104,6 +104,10 @@ export default function Alerts() {
               cell.classList.add("alerted-red");
             }
 
+            if (cellPriority === "Approuvé" || cellPriority2 === "Approuvé") {
+              cell.classList.add("alerted-red");
+            }
+
             if (parseInt(cell.classList[4].split("-")[2]) >= 3) {
               console.log(cell);
               setOpen(true);

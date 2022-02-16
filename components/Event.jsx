@@ -181,7 +181,7 @@ const Event = (props) => {
           data-priority={Status}
           sx={{ typography: "serveurs" }}
         >
-          {Status !== "Réservation" &&
+          {Status !== "Approuvé" &&
             Serveurs &&
             Serveurs.toString().replace(/,[s]*/g, ", ")}
           <br />
@@ -193,9 +193,11 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-depart-${index}`}
           align="center"
-          style={{ fontWeight: Status !== "Réservation" && 700 }}
+          style={{ fontWeight: Status !== "Approuvé" && 700 }}
         >
-          {Status !== "Réservation" && Départ ? Départ : "à venir..."}
+          {Status === "Approuvé" || Status === "Réservation" || !Départ
+            ? "à venir..."
+            : Départ}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
@@ -203,7 +205,9 @@ const Event = (props) => {
           className={`cell-ready-${index}`}
           align="center"
         >
-          {Status !== "Réservation" && Ready ? Ready : "à venir..."}
+          {Status === "Approuvé" || Status === "Réservation" || !Ready
+            ? "à venir..."
+            : Ready}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
