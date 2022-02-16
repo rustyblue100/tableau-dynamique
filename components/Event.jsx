@@ -62,7 +62,7 @@ const Event = (props) => {
     Notes,
     ["Nb. de personnes"]: Nb_de_personnes,
     Pains,
-    Vans,
+    ["Van (from Vans)"]: Vans,
     Serveurs,
     ["Arrivé service"]: Arrivé_service,
     Allergies,
