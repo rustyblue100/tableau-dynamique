@@ -19,7 +19,7 @@ export default function Alerts() {
     message: "",
   });
 
-  console.log(notificationDownPageRow);
+  /*   console.log(notificationDownPageRow); */
 
   // Row highlight alert
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function Alerts() {
             }
 
             if (parseInt(cell.classList[4].split("-")[2]) >= 3) {
-              console.log(cell);
+              /*    console.log(cell); */
               setOpen(true);
               setNotificationDownPageRow({
                 message: `Modification ${

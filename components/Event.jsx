@@ -71,6 +71,7 @@ const Event = (props) => {
     tel_regisseur,
     Status,
     ["Détails de commande"]: Détails,
+    ["Adresse de l'évènement"]: Adresse_evenement,
     Adresse,
     Type,
   } = props.event.fields;
@@ -137,7 +138,8 @@ const Event = (props) => {
             Régie: {prenom_regisseurs && prenom_regisseurs}{" "}
             {nom_regisseurs && nom_regisseurs} <br />
             Tél: {tel_regisseur && tel_regisseur} <br />
-            {Adresse && truncate(Adresse.toString(), 34)}
+            {Adresse && !Adresse_evenement && truncate(Adresse.toString(), 34)}
+            {Adresse_evenement && truncate(Adresse_evenement.toString(), 34)}
           </Typography>
         </StyledTableCell>
         <StyledTableCell
