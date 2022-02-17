@@ -183,9 +183,7 @@ const Event = (props) => {
           data-priority={Status}
           sx={{ typography: "serveurs" }}
         >
-          {Status !== "Approuvé" &&
-            Serveurs &&
-            Serveurs.toString().replace(/,[s]*/g, ", ")}
+          {Serveurs && Serveurs.toString().replace(/,[s]*/g, ", ")}
           <br />
           <small>Arrivé: {Arrivé_service}</small>
         </StyledTableCell>
