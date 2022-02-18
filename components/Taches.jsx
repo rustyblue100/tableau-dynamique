@@ -27,31 +27,22 @@ const AFaire = ({ afaire }) => {
     return r;
   }, {});
 
-  const afaireGroup =
-    afaire && Object.values(group); /* .sort((a, b) => b[1] - a[1]) */
+  const afaireGroup = afaire && Object.entries(group);
 
-  const afaireGroup2 =
-    afaire && Object.entries(group).sort((a, b) => b[1] - a[1]);
-
-  console.log(afaireGroup);
-
-  let testSortGroup = [...afaireGroup2]
+  let AFaireGroupSorted = [...afaireGroup]
     .map((d) => d.splice(1, 2).shift())
-    .sort((a, b) => (a > b ? 1 : -1));
-
-  console.log([...afaireGroup2].map((d) => d.splice(1, 2).shift()));
-  console.log(testSortGroup.sort((a, b) => (a > b ? 1 : -1)));
+    .sort((a, b) =>
+      a.map((d) => d.fields.Date) > b.map((d) => d.fields.Date) ? 1 : -1
+    );
 
   dayjs.locale("fr");
 
   var menu =
-    testSortGroup &&
-    testSortGroup
-      .sort((a, b) => (a > b ? 1 : -1))
-      .map((t) => {
-        const formatDate = dayjs(t[0].fields.Date).format("dddd D MMM");
-        return formatDate;
-      });
+    AFaireGroupSorted &&
+    AFaireGroupSorted.map((t) => {
+      const formatDate = dayjs(t[0].fields.Date).format("dddd D MMM");
+      return formatDate;
+    });
 
   const pagination = {
     clickable: true,
@@ -87,8 +78,8 @@ const AFaire = ({ afaire }) => {
 
   return (
     <Swiper pagination={pagination}>
-      {testSortGroup &&
-        testSortGroup.map((t, i) => {
+      {AFaireGroupSorted &&
+        AFaireGroupSorted.map((t, i) => {
           return (
             <SwiperSlide key={i}>
               <Grid
