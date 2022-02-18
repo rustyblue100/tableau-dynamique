@@ -39,7 +39,7 @@ const TacheCard = ({ info }) => {
   return (
     <StyledTableRow>
       <StyledTableCell
-        sx={{ textDecoration: Prêt && "line-through" }}
+        sx={{ textDecoration: Prêt && "line-through", maxWidth: 300 }}
         align="left"
       >
         {Plats}
