@@ -27,14 +27,27 @@ const AFaire = ({ afaire }) => {
     return r;
   }, {});
 
-  const afaireGroup = afaire && Object.values(group);
+  const afaireGroup =
+    afaire && Object.values(group); /* .sort((a, b) => b[1] - a[1]) */
+
+  const afaireGroup2 =
+    afaire && Object.entries(group).sort((a, b) => b[1] - a[1]);
+
+  console.log(afaireGroup);
+
+  let testSortGroup = [...afaireGroup2]
+    .map((d) => d.splice(1, 2).shift())
+    .sort((a, b) => (a > b ? 1 : -1));
+
+  console.log([...afaireGroup2].map((d) => d.splice(1, 2).shift()));
+  console.log(testSortGroup.sort((a, b) => (a > b ? 1 : -1)));
 
   dayjs.locale("fr");
 
   var menu =
-    afaireGroup &&
-    afaireGroup
-      /*       .sort((a, b) => (a > b ? 1 : -1)) */
+    testSortGroup &&
+    testSortGroup
+      .sort((a, b) => (a > b ? 1 : -1))
       .map((t) => {
         const formatDate = dayjs(t[0].fields.Date).format("dddd D MMM");
         return formatDate;
@@ -74,8 +87,8 @@ const AFaire = ({ afaire }) => {
 
   return (
     <Swiper pagination={pagination}>
-      {afaireGroup &&
-        afaireGroup.map((t, i) => {
+      {testSortGroup &&
+        testSortGroup.map((t, i) => {
           return (
             <SwiperSlide key={i}>
               <Grid
@@ -95,7 +108,9 @@ const AFaire = ({ afaire }) => {
                     <CardContent>
                       <CardHeader
                         sx={{ p: 1, backgroundColor: "#7be17691" }}
-                        titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
+                        titleTypographyProps={{
+                          fontSize: { xs: 16, lg: 22 },
+                        }}
                         title="Plats Frais"
                         subheader={dayjs(t[0].fields.Date).format("dddd D MMM")}
                         subheaderTypographyProps={{
@@ -147,7 +162,9 @@ const AFaire = ({ afaire }) => {
                     <CardContent>
                       <CardHeader
                         sx={{ p: 1, backgroundColor: "#71c9ff7a" }}
-                        titleTypographyProps={{ fontSize: { xs: 16, lg: 22 } }}
+                        titleTypographyProps={{
+                          fontSize: { xs: 16, lg: 22 },
+                        }}
                         subheaderTypographyProps={{
                           fontSize: { xs: 12, lg: 16 },
                         }}
