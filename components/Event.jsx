@@ -134,6 +134,7 @@ const Event = (props) => {
             lineHeight={"15px"}
             variant="regie"
             paragraph="p"
+            style={{ whiteSpace: "nowrap" }}
           >
             Régie: {prenom_regisseurs && prenom_regisseurs}{" "}
             {nom_regisseurs && nom_regisseurs} <br />
@@ -193,7 +194,10 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-depart-${index}`}
           align="center"
-          style={{ fontWeight: Status !== "Approuvé" && 700 }}
+          style={{
+            fontWeight: Status !== "Approuvé" && 700,
+            whiteSpace: "nowrap",
+          }}
         >
           {Status === "Approuvé" || Status === "Réservation" || !Départ
             ? "à venir..."
@@ -204,6 +208,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-ready-${index}`}
           align="center"
+          style={{ whiteSpace: "nowrap" }}
         >
           {Status === "Approuvé" || Status === "Réservation" || !Ready
             ? "à venir..."
