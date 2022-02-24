@@ -200,9 +200,7 @@ const Event = (props) => {
             whiteSpace: "nowrap",
           }}
         >
-          {Status === "Approuvé" || Status === "Réservation" || !Départ
-            ? "à venir..."
-            : Départ}
+          {!Départ ? "à venir..." : Départ}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
@@ -211,9 +209,7 @@ const Event = (props) => {
           align="center"
           style={{ whiteSpace: "nowrap" }}
         >
-          {Status === "Approuvé" || Status === "Réservation" || !Ready
-            ? "à venir..."
-            : Ready}
+          {!Ready ? "à venir..." : Ready}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
