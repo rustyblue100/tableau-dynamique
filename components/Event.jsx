@@ -175,7 +175,7 @@ const Event = (props) => {
           className={`cell-vans-${index}`}
           align="center"
         >
-          {Vans}
+          {Vans && Vans.toString().replace(/,[s]*/g, ", ")}
         </StyledTableCell>
         <StyledTableCell
           status={Status}
