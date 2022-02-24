@@ -174,6 +174,7 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-vans-${index}`}
           align="center"
+          style={{ whiteSpace: "nowrap" }}
         >
           {Vans && Vans.toString().replace(/,[s]*/g, ", ")}
         </StyledTableCell>
