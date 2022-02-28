@@ -2,6 +2,7 @@ import { Divider, List, ListItemText } from "@mui/material/";
 import { styled } from "@mui/material/styles";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
+import colorSwitch from "../utils/colorSwitcher";
 
 const Item = styled(ListItemText)(({ theme }) => ({
   ".MuiListItemText-primary": {
@@ -20,28 +21,31 @@ const Event = ({ event }) => {
     ["Nb. de personnes"]: nbPers,
     Type,
     Allergies,
+    Status,
   } = event.fields;
 
   const formatTime = "HH:mm";
 
   return (
     <>
-      <List pb={3}>
+      <List pb={3} sx={{ backgroundColor: colorSwitch(Status, "semaine") }}>
         <Item
-          sx={{ textTransform: "capitalize", mt: "-1px" }}
+          sx={{ textTransform: "capitalize", mt: "-1px", ml: 1 }}
           primary={Nom}
           primaryTypographyProps={{
             fontWeight: 700,
           }}
         />
         <Item
+          sx={{ ml: 1 }}
           primary={
             nbPers &&
             nbPers + " pers. " + dayjs(Date_et_Heure).format(formatTime)
           }
         />
-        <Item primary={Type} />
+        <Item primary={Type} sx={{ ml: 1 }} />
         <Item
+          sx={{ ml: 1 }}
           primaryTypographyProps={{
             color: "error.main",
           }}
