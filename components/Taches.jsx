@@ -22,10 +22,12 @@ import TacheCard from "./TacheCard";
 // import Swiper core and required modules
 
 const AFaire = ({ afaire }) => {
-  const group = afaire.reduce((r, a) => {
-    r[a.fields.Date] = [...(r[a.fields.Date] || []), a];
-    return r;
-  }, {});
+  const group = afaire
+    .filter((f) => f && f.fields && f.fields.Publier === true)
+    .reduce((r, a) => {
+      r[a.fields.Date] = [...(r[a.fields.Date] || []), a];
+      return r;
+    }, {});
 
   const afaireGroup = afaire && Object.entries(group);
 
