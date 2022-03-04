@@ -225,7 +225,12 @@ const Event = (props) => {
           data-priority={Status}
           className={`cell-notes-${index}`}
           align="right"
-          sx={{ typography: "body1", width: { xs: 112, lg: "unset" } }}
+          sx={{
+            whiteSpace: "pre-line",
+            fontSize: { xs: 14, lg: 16 },
+            lineHeight: 1.3,
+            width: { xs: 112, lg: "unset" },
+          }}
         >
           {Notes}
           <br></br>
