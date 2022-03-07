@@ -67,7 +67,7 @@ const Event = (props) => {
     ["Arrivé service"]: Arrivé_service,
     Allergies,
     prenom_regisseurs,
-    nom_regisseurs,
+    ["nom_regisseurs (from Régisseurs)"]: nom_regisseurs,
     tel_regisseur,
     Status,
     ["Détails de commande"]: Détails,
@@ -136,8 +136,7 @@ const Event = (props) => {
             paragraph="p"
             style={{ whiteSpace: "nowrap" }}
           >
-            Régie: {prenom_regisseurs && prenom_regisseurs}{" "}
-            {nom_regisseurs && nom_regisseurs} <br />
+            Régie: {nom_regisseurs && nom_regisseurs} <br />
             Tél: {tel_regisseur && tel_regisseur} <br />
             {Adresse && !Adresse_evenement && truncate(Adresse.toString(), 34)}
             {Adresse_evenement && truncate(Adresse_evenement.toString(), 34)}
