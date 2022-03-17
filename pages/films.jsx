@@ -48,8 +48,7 @@ const Films = () => {
     );
 
     Airtable.configure({
-      endpointUrl:
-        "https://api.airtable.com?sort%5B0%5D%5Bfield%5D=D%C3%A9part&sort%5B0%5D%5Bdirection%5D=asc",
+      endpointUrl: "https://api.airtable.com",
       apiKey: process.env.NEXT_PUBLIC_APIKEY,
     });
 
