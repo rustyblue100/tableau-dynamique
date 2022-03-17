@@ -95,7 +95,10 @@ export default function Events({
                 <TableBody>
                   {events &&
                     events
-                      /*         .sort((a, b) => (a.Date > b.Date ? 1 : -1)) */
+                      .sort(
+                        (a, b) =>
+                          parseInt(a.fields.Départ) - parseInt(b.fields.Départ)
+                      )
                       .map((f, i) => {
                         return <Event key={f.id} event={f} index={i} />;
                       })}
