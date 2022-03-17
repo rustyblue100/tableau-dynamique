@@ -97,7 +97,8 @@ export default function Events({
                     events
                       .sort(
                         (a, b) =>
-                          parseInt(a.fields.Départ) - parseInt(b.fields.Départ)
+                          parseInt(a ? a.fields.Départ : null) -
+                          parseInt(b ? b.fields.Départ : null)
                       )
                       .map((f, i) => {
                         return <Event key={f.id} event={f} index={i} />;
