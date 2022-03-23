@@ -233,7 +233,7 @@ const Event = (props) => {
         >
           {Notes}
           <br></br>
-          {Détails && (
+          {Détails?.trim() && (
             <DetailslNote
               href="#"
               size="small"
