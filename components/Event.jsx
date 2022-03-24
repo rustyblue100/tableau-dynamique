@@ -245,7 +245,12 @@ const Event = (props) => {
             </DetailslNote>
           )}
           {Détails && (
-            <Dialog onClose={handleClose} open={open}>
+            <Dialog
+              onClose={handleClose}
+              open={open}
+              maxWidth="md"
+              sx={{ whiteSpace: "pre-wrap", lineHeight: 1.5 }}
+            >
               <DialogContent dividers>
                 <Typography variant="regie" gutterBottom>
                   <ReactMarkdown>{Détails}</ReactMarkdown>
