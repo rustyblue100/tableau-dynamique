@@ -173,7 +173,7 @@ export default function Alerts() {
       style={{ top: 10 }}
       anchorOrigin={{ vertical: "top", horizontal: "center" }}
       open={open}
-      autoHideDuration={60000}
+      autoHideDuration={3600000}
       onClose={handleClose}
       message={notificationDownPageRow.message}
       action={action}
