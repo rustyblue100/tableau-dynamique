@@ -158,7 +158,8 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               sx={{
                 fontSize: { xs: 11, lg: 18 },
                 /*      borderRadius: 1, */
-                padding: "10px 5px",
+                padding: "10px 8px",
+                whiteSpace: "pre-wrap",
               }}
             >
               {message[0].fields.Message}
