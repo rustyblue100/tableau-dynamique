@@ -26,21 +26,8 @@ const TableSlide = ({ slideData, events, eventsDemain, tabIndexValue }) => {
   const evensData = events || eventsDemain;
   const [swiperRef, setSwiperRef] = useState(null);
 
-  function currentSwipe() {
-    return swiperRef && swiperRef.activeIndex + 1;
-  }
-
   return (
     <>
-      {/*       <div
-        style={{
-          float: "right",
-          marginTop: "-2rem",
-          marginRight: "1rem",
-        }}
-      >
-        {currentSwipe()}/2
-      </div> */}
       <Swiper
         effect={"fade"}
         slidesPerView={"auto"}

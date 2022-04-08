@@ -1,18 +1,9 @@
-import { useState, useRef } from "react";
-import {
-  FormControl,
-  Box,
-  TextField,
-  Button,
-  Grid,
-  Typography,
-} from "@mui/material/";
-import { signup, login, logout, useAuth } from "../utils/firebase";
-import { useRouter } from "next/router";
-import { withPublic } from "../utils/route";
-import Alert from "@mui/material/Alert";
-
+import { Box, Button, FormControl, Grid, TextField } from "@mui/material/";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
+import { login, signup, useAuth } from "../utils/firebase";
+import { withPublic } from "../utils/route";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -114,17 +105,6 @@ const Login = () => {
                     inputRef={passwordRef}
                   />
                 </Box>
-                {/*                 <Box pt={2}>
-                  <Button
-                    fullWidth
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    onClick={handleSubmit}
-                  >
-                    Enregistrement
-                  </Button>
-                </Box> */}
 
                 <Box pt={2}>
                   <Button

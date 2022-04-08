@@ -47,51 +47,6 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
     };
   }
 
-  /*   async function handleLogOut(e) {
-    try {
-      await logout();
-      router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
-  } */
-
-  /*   useEffect(() => {
-    const fetchData = async () => {
-      await axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=45.508888&lon=-73.561668&lang=fr&exclude=hourly&units=metric&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAPAPI}`
-        )
-        .then((res) => {
-          setWeatherData(res.data.daily.slice(0, 2));
-        })
-        .catch((error) => console.log(error));
-    };
-
-    fetchData();
-
-    setInterval(() => {
-      fetchData();
-    }, 3600000);
-
-    return () => {
-      fetchData();
-    };
-  }, []); */
-
-  /*   function weather() {
-    return (
-      weatherData &&
-      weatherData.map((d, i) => (
-        <Grid item xs={6} key={i}>
-          <Item elevation={0} style={{ textAlign: "center" }}>
-            <MeteoCard dataWeather={d} index={i} key={i} />
-          </Item>
-        </Grid>
-      ))
-    );
-  } */
-
   return (
     <Box backgroundColor="white" sx={{ p: 0, m: 0 }}>
       <Grid
@@ -183,9 +138,9 @@ const Header = ({ message, auth, value, setValue, setTabIndex }) => {
               component="div"
               sx={{ pr: "8px", lineHeight: 1.25 }}
             >
-              <strong>info@debonspetitsplats.com</strong>
+              <strong>Lorem ipsum dolor </strong>
               <br />
-              <strong>1210@dbpp</strong>
+              <strong>...</strong>
             </Typography>
             <Box sx={{ float: "right", maxWidth: { xs: "48px", lg: "100px" } }}>
               <img src="/qr-mobile.png" style={{ maxWidth: "100%" }} />
